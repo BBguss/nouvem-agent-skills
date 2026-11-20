@@ -1,0 +1,55 @@
+{
+  "keywords": [
+    "check shell",
+    "check the shell",
+    "check background",
+    "background job",
+    "background shell",
+    "background process",
+    "still running",
+    "is it running",
+    "stuck process",
+    "hung process",
+    "orphan process",
+    "orphaned process",
+    "zombie process",
+    "re-arm monitor",
+    "rearm monitor",
+    "monitor expired",
+    "monitor died",
+    "heartbeat",
+    "exit 143",
+    "load spike",
+    "high load",
+    "cek shell",
+    "cek proses",
+    "pantau proses",
+    "pantau shell",
+    "masih jalan",
+    "proses nyangkut",
+    "proses macet",
+    "proses yatim",
+    "load tinggi",
+    "monitor mati",
+    "pasang ulang monitor",
+    "proceso colgado",
+    "processus bloqué"
+  ],
+  "patterns": [
+    "\\b(check|watch|monitor)\\b.{0,30}\\b(shell|background|process(es)?|jobs?|subagents?|sub-agents?)\\b",
+    "\\b(is|are)\\b.{0,20}\\b(still running|stuck|hanging|hung|frozen)\\b",
+    "\\b(cek|pantau|awasi)\\b.{0,30}\\b(shell|proses|job|subagen|sub-agent|monitor)\\b",
+    "\\b(kenapa|why)\\b.{0,30}\\b(lama|stuck|hang|macet|nyangkut|tidak selesai|never finishes)\\b",
+    "\\b(kill|bersihkan|clean ?up)\\b.{0,30}\\b(orphan|yatim|stray|leftover|sisa)\\b",
+    "\\bmonitor\\b.{0,30}\\b(expired|died|exit(ed)?|mati|habis|re-?arm)\\b"
+  ],
+  "files": [],
+  "negative": [
+    "\\b(prod|production|produksi)\\b.{0,20}\\blogs?\\b"
+  ],
+  "slash": [
+    "/jobs",
+    "/check-shell"
+  ],
+  "priority": 2
+}

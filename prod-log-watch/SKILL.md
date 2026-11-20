@@ -32,7 +32,7 @@ No logs of your own (static host, PaaS)? Use the platform log stream plus an upt
 1. Check first with `<WATCH_STATUS_CMD>`. If one is alive and its output reaches this session, do not start another.
 2. Start one read-only watcher. Harness with a monitor tool: run it as a monitor. Otherwise run it in the background writing to a file and read that file on a 60-120 s heartbeat: `timeout <TTL> <WATCH_CMD> >> <JOB_TMP>/watch.log 2>&1 &`
 3. Dedupe: one line per event; repeats within about 10 minutes are counted, not reprinted. Check health every ~30 s; report DOWN after 2 consecutive failures and "UP again" on recovery.
-4. No orphans: wrap every monitor command in `timeout <TTL>`. Expired monitors often do not kill their children; re-arming on each expiry stacks copies and raises server load. One-off checks get `timeout 20`.
+4. No orphans: wrap every monitor command in `timeout <TTL>` (general rules in `background-job-watch`). Expired monitors often do not kill their children; re-arming on each expiry stacks copies and raises server load. One-off checks get `timeout 20`.
 5. On expiry, start one new watcher, then kill older copies (keep the newest). Final count must be exactly 1.
 6. A new session may not receive an old session's watcher output: start yours, then stop the old one.
 7. A permanent watcher (cron or systemd timer with an `--ensure` mode writing events to a file) may replace a session monitor. Read its event file; never stop it.

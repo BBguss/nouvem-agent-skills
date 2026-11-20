@@ -69,7 +69,7 @@ New or code-named models: place by the vendor's own description (flagship = T3, 
 - Background CLI processes: one log file per job, record the PID, wrap in `timeout` to avoid orphans.
 
 ### 5. Watch (mandatory)
-- Start a heartbeat every 60-120 s: per job, print the last log line and idle time (output file mtime). Do not read full sub-agent transcripts.
+- Follow `background-job-watch` for timeouts, monitors, stall checks and orphan clean-up. Start a heartbeat every 60-120 s: per job, print the last log line and idle time (output file mtime). Do not read full sub-agent transcripts.
 - Silent over 3 minutes without a visible reason: inspect the process and log, report to the user. Stuck: stop it, then do the job inline or retry with a better brief.
 - Re-arm the heartbeat whenever it expires while sub-agents still run. Never guess the result of an unfinished sub-agent.
 

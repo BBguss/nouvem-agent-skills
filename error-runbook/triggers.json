@@ -32,7 +32,15 @@
     "compile error",
     "syntaxerror",
     "referenceerror",
-    "typeerror"
+    "typeerror",
+    "catat error",
+    "pencatatan error",
+    "dokumentasikan error",
+    "record the error",
+    "log this error",
+    "error journal",
+    "lessons learned",
+    "runbook"
   ],
   "patterns": [
     "\\bwhy (is|does|did|are|do)\\b.*\\b(fail|failing|break|broken|error|crash|crashing|not working|500|502|503)",
@@ -40,7 +48,8 @@
     "\\b(TypeError|ReferenceError|SyntaxError|NullPointerException|ModuleNotFoundError|ImportError|KeyError|Traceback \\(most recent)",
     "\\b(error|exception|fatal|panic)\\s*[:\\[]",
     "\\bat \\S+ \\(.+:\\d+:\\d+\\)",
-    "\\b(exit code|status code|http) ?[45]\\d\\d\\b"
+    "\\b(exit code|status code|http) ?[45]\\d\\d\\b",
+    "\\b(catat|dokumentasikan|record|document|log)\\b.{0,20}\\b(error|errors|kesalahan|gagal|failure|incident|insiden)\\b"
   ],
   "files": [],
   "negative": [

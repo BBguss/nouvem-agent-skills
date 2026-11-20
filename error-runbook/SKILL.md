@@ -1,6 +1,6 @@
 ---
 name: error-runbook
-description: Use when the user says "analyse error" / "analisis error", pastes an error message, stack trace, log line or failed deploy output, or asks why something failed in production or staging. Looks the exact error signature up in the project runbook first, applies the documented fix, otherwise finds the root cause, fixes and tests it, then documents it back into the runbook and changelog.
+description: Use when the user says "analyse error" / "analisis error", pastes an error message, stack trace, log line or failed deploy output, asks why something failed in production or staging, or asks to record/log an error ("catat error", "pencatatan error", lessons learned), including errors in the agent's own commands and tools. Looks the exact error signature up in the project runbook first, applies the documented fix, otherwise finds the root cause, fixes and tests it, then documents it back into the runbook (user, server and agent/tooling parts) and changelog.
 ---
 
 # Error runbook SOP
@@ -10,7 +10,7 @@ A catalog of errors that grows with every incident. Works for any project: a pro
 ## When to use
 - There is exact error text (message, code, HTTP status, stack trace) to explain or fix.
 - Skip when the request is pure design/feature work, or no error can be identified (ask for logs/symptoms first).
-- Related: `prod-log-watch` (event source), `safe-hotfix` / `release-deploy` (ship the fix), `living-docs` (doc-writing rules), `definition-of-done`.
+- Related: `prod-log-watch` (event source), `background-job-watch` (hung or runaway jobs), `safe-hotfix` / `release-deploy` (ship the fix), `living-docs` (doc-writing rules), `definition-of-done`.
 
 ## Project adaptation
 | Placeholder | Meaning | Example |
@@ -30,6 +30,9 @@ A catalog of errors that grows with every incident. Works for any project: a pro
 - Other guardrails still apply: production changes go only through `<FIX_DELIVERY>`, work that takes a service down waits for `maintenance-window-ops`, large or critical changes need approval.
 
 ## Steps
+
+### 0. Record as you go
+Any error met during a task (user-facing, server, or your own tooling) is noted with its exact text at the moment it happens, in the working notes or directly in the runbook. Fixing it quickly is not a reason to skip the record; step 4 turns the notes into entries.
 
 ### 1. Collect the error signature
 Copy the exact text: message, code (`EACCES`, `P1001`, HTTP 502), file/service name, time. If the user gives only symptoms, search `<LOG_SOURCES>` with `grep -n` around the event time. Never paraphrase; the signature must be greppable.
@@ -56,6 +59,7 @@ Try several fragments (code, unique phrase, file name). If `<CLASSIFY_CMD>` exis
 Write without offering first, unless project rules say otherwise.
 - **Part A** when adding a user-facing message catalog code.
 - **Part B** for server/infra errors.
+- **Part C** for errors of the agent's own work: a tool or command refused by a guard, a script that failed on this host's shell (BusyBox, PowerShell), a command that hung or overloaded the machine, a monitor that kept dying, a wrong assumption that cost a retry. Record each one the first time it happens, even when it was fixed in the same turn.
 - An entry in `<CHANGELOG_FILE>`: symptom, root cause, fix, test, commit, release/hotfix tag. Then commit and push per project policy.
 
 ## Structure of `<RUNBOOK_FILE>`
@@ -65,6 +69,9 @@ Opening section: how to use (the grep command) and how to add entries. No secret
 |---|---|---|
 | **A. Errors shown to users** | catalog of user-side messages, matched in order, first match wins | code, side, trigger (raw text), message to user = solution for the user, agent action |
 | **B. Server/infra errors** | app logs, nodes, DB, storage, web server, deploy | **error signature** (exact, greppable text), side, root cause, solution (file/script/commit/command), status, changelog reference |
+| **C. Agent and tooling errors** | what went wrong in the agent's own commands and tools (see step 4) | **signature** (exact refusal or error text), context (tool, host, shell), cause, what works instead, date |
+
+Part C is read at session start together with the newest changelog entry, so the same mistake is not repeated. Keep each row to the working alternative ("BusyBox `ps` has no `-e`: use `/bin/ps -eo ...`"), not the story.
 
 - **Side:** `user` (user's code/configuration, not an app bug), `server` (app/infra), `mixed` (read detail/logs).
 - **Status B:** `fixed`, `workaround`, `open`, `runbook` (operational procedure).

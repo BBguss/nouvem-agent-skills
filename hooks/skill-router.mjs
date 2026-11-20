@@ -377,6 +377,8 @@ function main() {
 
 const isMain = (() => { try { return fs.realpathSync(process.argv[1] || '') === fs.realpathSync(fileURLToPath(import.meta.url)); } catch { return false; } })();
 if (isMain) {
+  // a closed reader (e.g. `--explain ... | head`) is not an error
+  process.stdout.on('error', (e) => { if (e && e.code === 'EPIPE') process.exit(0); });
   try { main(); } catch (e) {
     if (process.env.SKILL_ROUTER_DEBUG === '1') process.stderr.write(`[skill-router] error: ${e && e.stack || e}\n`);
   }
