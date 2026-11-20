@@ -9,6 +9,7 @@ Origin: repeated greenfield builds across very different project types. Model-ag
 
 ## When to use / not
 - Use: a new project, a new app inside a monorepo, or a rebuild from scratch.
+- Idea still vague (goal, users or approach undecided): run `idea-shaping` first and build from its approved brief.
 - Do not use: a change to an existing codebase (`code-change` or `plan-then-code`); only getting an existing repo to run (`local-dev-setup`); diagnosing a problem (`analyze-problem`).
 - Read-only words in the request ("analyse", "just propose") mean: produce the plan of section 1-2 only (`mode-gates`).
 

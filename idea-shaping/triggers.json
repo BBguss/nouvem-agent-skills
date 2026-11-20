@@ -1,0 +1,58 @@
+{
+  "keywords": [
+    "brainstorm",
+    "brainstorming",
+    "i have an idea",
+    "got an idea",
+    "which approach",
+    "best approach",
+    "best way to",
+    "pros and cons",
+    "trade-offs",
+    "tradeoffs",
+    "help me design",
+    "design options",
+    "explore options",
+    "think through",
+    "not sure how to approach",
+    "design brief",
+    "ada ide",
+    "punya ide",
+    "ide fitur",
+    "minta ide",
+    "enaknya gimana",
+    "enaknya bagaimana",
+    "bagusnya gimana",
+    "bagusnya pakai apa",
+    "sebaiknya pakai apa",
+    "pilihan desain",
+    "opsi desain",
+    "rancang fitur",
+    "rancang konsep",
+    "kelebihan dan kekurangan",
+    "plus minus",
+    "tapi bingung",
+    "masih bingung",
+    "diskusi ide",
+    "lluvia de ideas"
+  ],
+  "patterns": [
+    "\\b(should (i|we)|better to)\\b.{0,40}\\b(or|vs\\.?|versus)\\b",
+    "\\b(what'?s|what is) the (best|right|cleanest) way to\\b",
+    "\\b(how (should|would|could) (i|we))\\b.{0,30}\\b(design|approach|structure|architect)\\b",
+    "\\b(mau|ingin|pengen) (bikin|buat|nambah|tambah)\\b.{0,60}\\b(bingung|gimana|bagaimana|enaknya|bagusnya)\\b",
+    "\\b(enaknya|bagusnya|sebaiknya)\\b.{0,40}\\b(pakai|pake|gimana|bagaimana|apa)\\b",
+    "\\b(pakai|pake)\\b.{0,30}\\b(atau)\\b.{0,30}\\b(ya|bagusnya|enaknya|sebaiknya|\\?)"
+  ],
+  "files": [],
+  "negative": [
+    "\\b(error|exception|stack trace|traceback|crash(ed|es)?|502|500)\\b",
+    "\\b(deploy|hotfix|rollback)\\b",
+    "\\b(just build it|langsung (saja|aja) (bikin|buat|kerjakan))\\b"
+  ],
+  "slash": [
+    "/brainstorm",
+    "/idea"
+  ],
+  "priority": 2
+}

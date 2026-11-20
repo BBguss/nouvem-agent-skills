@@ -83,5 +83,11 @@
  {"p":"explain what a closure is in javascript","ok":[]},
  {"p":"good morning, how are you?","ok":[]},
  {"p":"translate this sentence to French","ok":[]},
- {"p":"what's the capital of Australia","ok":[]}
+ {"p":"what's the capital of Australia","ok":[]},
+ {"p":"brainstorm with me: I want a loyalty points feature but not sure how to approach it","ok":["idea-shaping"]},
+ {"p":"mau bikin fitur notifikasi tapi bingung enaknya gimana","ok":["idea-shaping"]},
+ {"p":"should we use websockets or polling for the live order status?","ok":["idea-shaping","analyze-problem"]},
+ {"p":"bagusnya pakai apa untuk simpan file upload user, S3 atau disk lokal?","ok":["idea-shaping"]},
+ {"p":"what is the best way to structure multi-tenant billing, give me pros and cons","ok":["idea-shaping"]},
+ {"p":"saya punya ide aplikasi antrian klinik, bantu rancang konsepnya dulu","ok":["idea-shaping","build-project"]}
 ]

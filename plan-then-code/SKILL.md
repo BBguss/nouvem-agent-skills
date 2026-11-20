@@ -5,7 +5,7 @@ description: Use when a non-trivial change needs mapping before implementation (
 
 # Plan then code: map first, then implement cleanly
 
-Works for any project type (web app, API, CMS, mobile backend, CLI, portfolio site, scripts). It complements, not replaces: open-ended design goes to a brainstorming skill, test-first cycles to a TDD skill, systematic debugging to a debugging skill. This skill owns the map and the layer order.
+Works for any project type (web app, API, CMS, mobile backend, CLI, portfolio site, scripts). It complements, not replaces: open-ended design goes to a brainstorming skill (`idea-shaping` in this pack), test-first cycles to a TDD skill, systematic debugging to a debugging skill. This skill owns the map and the layer order.
 
 ## When to use
 - A task spans several files, carries risk, has an unclear root cause, or a saved plan is ready to execute.

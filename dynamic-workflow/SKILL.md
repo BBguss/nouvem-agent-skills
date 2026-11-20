@@ -24,7 +24,8 @@ Origin: sessions where requests arrive in natural language, mix intents, and cha
 ## Intent → skill chain
 | Intent | Signals | Default chain |
 |---|---|---|
-| **build** | new project, idea, "bikin website/app" | `build-project` → `local-dev-setup` → `definition-of-done` → (`web-quality-audit` if public web) → `release-deploy` |
+| **shape** | vague idea, "brainstorm", "which approach", "enaknya gimana", options wanted | `idea-shaping` → (approved brief) → `build-project` / `plan-then-code` / `code-change` |
+| **build** | new project, "bikin website/app" (vague idea: start with `idea-shaping`) | `build-project` → `local-dev-setup` → `definition-of-done` → (`web-quality-audit` if public web) → `release-deploy` |
 | **change** | add/modify feature, refactor in existing repo | small: `code-change` → `definition-of-done`; large/risky: `plan-then-code` → `definition-of-done` |
 | **fix** | error message, stack trace, broken behavior | known signature: `error-runbook`; unknown cause: `analyze-problem` → `code-change`/`plan-then-code` → `definition-of-done`; prod impact: + `safe-hotfix` or `release-deploy` |
 | **analyze** | why, investigate, compare options, root cause | `analyze-problem` (read-only), then ask before any fix chain |
