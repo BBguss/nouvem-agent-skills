@@ -1,0 +1,52 @@
+{
+  "keywords": [
+    "security audit",
+    "security review",
+    "check security",
+    "is this secure",
+    "vulnerability",
+    "vulnerabilities",
+    "pentest",
+    "penetration test",
+    "owasp",
+    "red team",
+    "sql injection",
+    "xss",
+    "csrf",
+    "off-sec",
+    "def-sec",
+    "harden",
+    "hardening",
+    "cek keamanan",
+    "audit keamanan",
+    "celah keamanan",
+    "kerentanan",
+    "review kode",
+    "ada bug",
+    "uji penetrasi",
+    "auditoría de seguridad",
+    "security issues",
+    "security issue",
+    "security check",
+    "vulnerable"
+  ],
+  "patterns": [
+    "\\b(is|are) (this|it|my|the) (code|app|api|endpoint|site|route|login)s? (secure|safe|vulnerable|exploitable)",
+    "\\b(find|check|scan|look) (for )?(security )?(bugs|vulnerabilit(y|ies)|holes|flaws|exploits)",
+    "\\b(cek|periksa|audit|review)\\b.*\\b(keamanan|security|celah|bug|kerentanan)",
+    "\\b(fix|patch|remediate|close)\\b.*\\b(vulnerabilit(y|ies)|findings|security (issues?|holes?))",
+    "\\b(leak(s|ed|ing)?|exposed?) (secrets?|tokens?|api keys?|passwords?|credentials)",
+    "\\b(check|review|scan|audit|cek|periksa)\\b.{0,30}\\b(security|secure|vulnerab\\w*|keamanan|celah)\\b"
+  ],
+  "files": [
+    "SECURITY.md",
+    "SECURITY_DEFERRED_ITEMS.md"
+  ],
+  "negative": [],
+  "slash": [
+    "/off-sec",
+    "/def-sec",
+    "/audit"
+  ],
+  "priority": 2
+}

@@ -1,0 +1,42 @@
+{
+  "keywords": [
+    "definition of done",
+    "is it done",
+    "is this done",
+    "ready to ship",
+    "ready to merge",
+    "mark as done",
+    "all tests pass",
+    "verify the fix",
+    "regression check",
+    "impact analysis",
+    "sudah selesai",
+    "apakah sudah beres",
+    "sudah beres",
+    "siap rilis",
+    "cek regresi",
+    "analisis dampak",
+    "listo para",
+    "terminé",
+    "verified with evidence",
+    "really verified",
+    "make sure the fix",
+    "prove it works",
+    "pastikan beres",
+    "pastikan sudah benar"
+  ],
+  "patterns": [
+    "\\b(is|are) (it|this|that|everything|the (fix|feature|task)) (done|finished|complete|working|ready)",
+    "\\b(did|does) (it|that|this) (really )?(work|pass)",
+    "\\b(keeps?|still|again) (fail(ing|s)?|break(ing|s)?|not working)",
+    "\\b(sudah|udah|masih) (selesai|beres|jalan|gagal|error)\\b",
+    "\\bwrap (it )?up\\b|\\bfinali[sz]e\\b",
+    "\\b(make sure|ensure|pastikan|verify|verifikasi)\\b.{0,40}\\b(fix|works?|verified|passes|done|beres|berhasil|jalan)\\b"
+  ],
+  "files": [],
+  "negative": [],
+  "slash": [
+    "/dod"
+  ],
+  "priority": 2
+}

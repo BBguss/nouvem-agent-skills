@@ -1,0 +1,15 @@
+{
+  "keywords": [
+    "sub-agent",
+    "in parallel",
+    "secara paralel",
+    "delegate"
+  ],
+  "patterns": [],
+  "files": [],
+  "negative": [],
+  "slash": [
+    "/delegate"
+  ],
+  "priority": 1
+}

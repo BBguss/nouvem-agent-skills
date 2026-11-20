@@ -1,0 +1,14 @@
+{
+  "keywords": [
+    "workflow",
+    "alur kerja",
+    "end to end"
+  ],
+  "patterns": [],
+  "files": [],
+  "negative": [],
+  "slash": [
+    "/workflow"
+  ],
+  "priority": 0
+}

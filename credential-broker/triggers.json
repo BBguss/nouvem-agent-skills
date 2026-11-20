@@ -1,0 +1,54 @@
+{
+  "keywords": [
+    "password",
+    "credentials",
+    "api key",
+    "access token",
+    "secret key",
+    "ssh key",
+    "sudo",
+    "private key",
+    ".env file",
+    "rotate the key",
+    "rotate secret",
+    "leaked key",
+    "kata sandi",
+    "kredensial",
+    "sandi",
+    "kunci api",
+    "token akses",
+    "rahasia",
+    "putar kunci",
+    "bocor",
+    "contraseña",
+    "mot de passe",
+    "api token",
+    "ssh keys",
+    "rotate keys",
+    "rotate the",
+    "store this token",
+    "secret",
+    "secrets"
+  ],
+  "patterns": [
+    "\\b(what('s| is)|give me|show me|tell me|paste|share|send) (the |my |your )?(password|passcode|token|api key|secret|credentials?)\\b",
+    "\\b(ssh|login|log in|connect|masuk|konek)\\b.*\\b(server|database|db|host|vps|remote)\\b",
+    "\\b(need|require|asks? for|butuh|minta) (a |the )?(password|sudo|token|credentials?|sandi|kredensial)",
+    "\\b(key|token|password|secret|sandi|kunci)\\b.*\\b(leak(ed)?|exposed|committed|bocor|ter-?commit)",
+    "\\bsudo\\b",
+    "\\b(store|save|keep|simpan|rotate|ganti)\\b.{0,30}\\b(token|api key|password|secret|ssh keys?|credential|kredensial|sandi)\\b"
+  ],
+  "files": [
+    ".env",
+    ".env.local",
+    ".env.production"
+  ],
+  "negative": [
+    "\\bforgot password (page|form|flow|link)\\b",
+    "\\bpassword (field|input|reset email) (ui|component)\\b"
+  ],
+  "slash": [
+    "/creds"
+  ],
+  "priority": 3
+}

@@ -1,0 +1,14 @@
+{
+  "keywords": ["hotfix", "hot fix", "hotfix prod", "patch production", "ship this fix", "ship the fix", "emergency fix", "copy the changed files to prod", "revert the hotfix", "hotfix produksi", "perbaikan darurat", "kirim fix ke prod", "tambal produksi", "correctif urgent", "parche urgente"],
+  "patterns": [
+    "\\b(hotfix|hot-fix|patch)\\b.*\\b(prod|production|live)\\b",
+    "\\b(push|ship|send|copy|deploy)\\b.*\\b(fix|patch)\\b.*\\b(prod|production|live)\\b",
+    "\\b(kirim|naikkan|pasang)\\b.*\\b(fix|perbaikan|patch)\\b.*\\b(prod|produksi)\\b",
+    "\\b(revert|rollback)\\b.*\\bhotfix\\b",
+    "\\bwithout\\b.*\\bfull (release|deploy)\\b"
+  ],
+  "files": [],
+  "negative": ["\\b(dev|staging|local)\\b.*\\bonly\\b"],
+  "slash": ["/hotfix"],
+  "priority": 3
+}

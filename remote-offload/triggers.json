@@ -1,0 +1,14 @@
+{
+  "keywords": ["offload", "offload the build", "offload tests", "run tests remotely", "run tests on the worker", "run on the remote node", "remote build", "worker node", "load guard", "server is overloaded", "machine too slow to run tests", "jalankan test di worker", "jalankan di node remote", "beban server tinggi", "load tinggi", "jalankan build di server lain", "tests auf dem worker ausfuehren", "lancer les tests a distance"],
+  "patterns": [
+    "\\b(run|execute)\\b.*\\b(tests?|build|lint|suite|lighthouse|e2e)\\b.*\\b(remote(ly)?|worker|another (machine|server|node)|elsewhere)\\b",
+    "\\b(offload|off-load)\\b.*\\b(tests?|build|lint|job|work)\\b",
+    "\\b(jalankan|pindahkan)\\b.*\\b(test|build|lint)\\b.*\\b(remote|worker|server lain|node lain)\\b",
+    "\\b(load|cpu|ram|memory)\\b.*\\b(too high|overload(ed)?|spik(e|ing)|tinggi)\\b.*\\b(tests?|build|suite)\\b",
+    "\\b(tests?|build|suite)\\b.*\\b(too (slow|heavy)|kills? the (server|machine)|freez(e|es|ing))\\b"
+  ],
+  "files": [],
+  "negative": [],
+  "slash": ["/offload"],
+  "priority": 1
+}

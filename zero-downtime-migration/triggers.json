@@ -1,0 +1,14 @@
+{
+  "keywords": ["migrate site", "migrate the app", "migrate website", "move site", "move the website", "move my site", "site migration", "cutover", "switch hosting", "move to a new server", "migrate hosting", "pindahkan situs", "pindahkan website", "pindah hosting", "migrasi situs", "migrasi aplikasi", "pindah server", "migrer le site", "migrar el sitio", "website umziehen"],
+  "patterns": [
+    "\\b(migrate|move|transfer|relocate)\\b.*\\b(site|website|app|application|domain|blog|store)\\b.*\\b(to|into|onto)\\b",
+    "\\b(pindah(kan)?|migrasi(kan)?)\\b.*\\b(situs|website|aplikasi|domain|hosting|server)\\b",
+    "\\b(zero|no)[- ]downtime\\b.*\\b(migration|move|switch|cutover)\\b",
+    "\\b(dns|domain)\\b.*\\b(cutover|switch|point)\\b.*\\b(new|another)\\b.*\\b(server|host|proxy)\\b",
+    "\\bfrom\\b.*\\b(shared hosting|old (server|host|vps)|heroku|wordpress)\\b.*\\bto\\b"
+  ],
+  "files": [],
+  "negative": ["\\b(database|db|schema) migration\\b", "\\bmigrations?\\b.*\\b(prisma|knex|alembic|rails|django|laravel)\\b"],
+  "slash": ["/migrate-site"],
+  "priority": 2
+}

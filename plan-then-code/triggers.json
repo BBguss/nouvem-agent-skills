@@ -1,0 +1,46 @@
+{
+  "keywords": [
+    "implementation plan",
+    "map the files",
+    "file map",
+    "root cause analysis",
+    "dependency chain",
+    "plan first",
+    "make a plan",
+    "rencana implementasi",
+    "buat rencana",
+    "petakan file",
+    "peta berkas",
+    "rencanakan dulu",
+    "refactor plan",
+    "execute the plan",
+    "jalankan rencana",
+    "plan de implementación",
+    "map out",
+    "every file involved",
+    "before we redesign",
+    "redesign",
+    "peta file",
+    "petakan"
+  ],
+  "patterns": [
+    "\\b(plan|map|outline) (out )?(the |this )?(change|feature|refactor|migration|implementation|fix)",
+    "\\bbefore (we |you )?(implement|code|write|change)\\b.*\\b(plan|map|understand|look)",
+    "\\b(buat|susun|rancang) (dulu )?(rencana|plan)\\b",
+    "\\bwhich files (are|would be|will be) (affected|touched|involved)"
+  ],
+  "files": [
+    "plan.md",
+    "PLAN.md",
+    "plan-agent.md"
+  ],
+  "negative": [
+    "\\btypo\\b",
+    "\\bone[- ]line\\b"
+  ],
+  "slash": [
+    "/plan",
+    "/code"
+  ],
+  "priority": 2
+}

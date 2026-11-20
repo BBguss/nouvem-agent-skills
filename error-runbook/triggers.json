@@ -1,0 +1,54 @@
+{
+  "keywords": [
+    "analyse error",
+    "analyze error",
+    "analisis error",
+    "analisa error",
+    "stack trace",
+    "stacktrace",
+    "traceback",
+    "error message",
+    "build failed",
+    "deploy failed",
+    "internal server error",
+    "502 bad gateway",
+    "500 error",
+    "unhandled exception",
+    "segmentation fault",
+    "ECONNREFUSED",
+    "EACCES",
+    "ENOENT",
+    "error log",
+    "log error",
+    "gagal deploy",
+    "kenapa error",
+    "muncul error",
+    "pesan error",
+    "analiza el error",
+    "module not found",
+    "cannot find module",
+    "can't resolve",
+    "build gagal",
+    "compile error",
+    "syntaxerror",
+    "referenceerror",
+    "typeerror"
+  ],
+  "patterns": [
+    "\\bwhy (is|does|did|are|do)\\b.*\\b(fail|failing|break|broken|error|crash|crashing|not working|500|502|503)",
+    "\\b(kenapa|mengapa|kok)\\b.*\\b(error|gagal|crash|mati|tidak jalan|500|502)",
+    "\\b(TypeError|ReferenceError|SyntaxError|NullPointerException|ModuleNotFoundError|ImportError|KeyError|Traceback \\(most recent)",
+    "\\b(error|exception|fatal|panic)\\s*[:\\[]",
+    "\\bat \\S+ \\(.+:\\d+:\\d+\\)",
+    "\\b(exit code|status code|http) ?[45]\\d\\d\\b"
+  ],
+  "files": [],
+  "negative": [
+    "\\bno errors?\\b",
+    "\\bwithout errors?\\b"
+  ],
+  "slash": [
+    "/error"
+  ],
+  "priority": 3
+}

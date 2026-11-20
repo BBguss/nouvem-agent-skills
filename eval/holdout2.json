@@ -1,0 +1,510 @@
+[
+ {
+  "p": "I want a guard that refuses any rm -rf on the uploads dir and blocks edits under /srv/prod before the agent runs them",
+  "ok": [
+   "agent-safety-hooks"
+  ]
+ },
+ {
+  "p": "gimana cara bikin hook biar agent nggak bisa force push ke main?",
+  "ok": [
+   "agent-safety-hooks"
+  ]
+ },
+ {
+  "p": "can you test wether my pre-tool hook really blocks commands with passwords inline? it seems to let some through",
+  "ok": [
+   "agent-safety-hooks"
+  ]
+ },
+ {
+  "p": "I just added POST /api/orders/refund to the shop backend, we also have an MCP server - does it need a tool for it?",
+  "ok": [
+   "agent-tool-parity"
+  ]
+ },
+ {
+  "p": "tolong cek semua route di dashboard udah ada tool MCP-nya belum, yang belum kasih alasan pengecualian",
+  "ok": [
+   "agent-tool-parity"
+  ]
+ },
+ {
+  "p": "audit coverage between our REST endpoints and the function-calling tools exposed to the assistant",
+  "ok": [
+   "agent-tool-parity"
+  ]
+ },
+ {
+  "p": "why does the product list page take 8 seconds after I added the category filter? don't change anything yet, just find out",
+  "ok": [
+   "analyze-problem",
+   "mode-gates"
+  ]
+ },
+ {
+  "p": "kok bisa ya test login kadang lulus kadang gagal? cari tahu penyebabnya dulu",
+  "ok": [
+   "analyze-problem"
+  ]
+ },
+ {
+  "p": "figure out what's causing memory to creep up on my express api over a few hours",
+  "ok": [
+   "analyze-problem"
+  ]
+ },
+ {
+  "p": "bug di checkout: kok total keranjang jadi minus? please investigate root cause dulu",
+  "ok": [
+   "analyze-problem"
+  ]
+ },
+ {
+  "p": "build me a portfolio site for a photographer, with a gallery and contact form",
+  "ok": [
+   "build-project"
+  ]
+ },
+ {
+  "p": "bikinin aplikasi toko online buat jualan baju, dari nol ya",
+  "ok": [
+   "build-project"
+  ]
+ },
+ {
+  "p": "need a REST API for a todo-sharing app, new repo, postgres, with tests and CI",
+  "ok": [
+   "build-project"
+  ]
+ },
+ {
+  "p": "add a 'phone' field to the signup form and the users table validation",
+  "ok": [
+   "code-change"
+  ]
+ },
+ {
+  "p": "ubah nama fungsi getUsr jadi getUser di seluruh repo dong, sama update test-nya",
+  "ok": [
+   "code-change"
+  ]
+ },
+ {
+  "p": "bump axios to the latest minor and fix whatever breaks",
+  "ok": [
+   "code-change"
+  ]
+ },
+ {
+  "p": "tambah validasi email di register form, make sure tests ikut di-update",
+  "ok": [
+   "code-change"
+  ]
+ },
+ {
+  "p": "I need the database password to run this migration, where do I get it?",
+  "ok": [
+   "credential-broker"
+  ]
+ },
+ {
+  "p": "gw mau rotate token SSH buat server staging, gimana aman nya tanpa nempel password di chat",
+  "ok": [
+   "credential-broker"
+  ]
+ },
+ {
+  "p": "this command needs sudo and an API key - how should you run it without me pasting the secret?",
+  "ok": [
+   "credential-broker"
+  ]
+ },
+ {
+  "p": "ok the fix is in, can you confirm it's actually done and passing before I merge?",
+  "ok": [
+   "definition-of-done"
+  ]
+ },
+ {
+  "p": "udah selesai belum? jangan bilang beres kalau belum ada bukti test-nya",
+  "ok": [
+   "definition-of-done"
+  ]
+ },
+ {
+  "p": "you've tried three times and the build still fails, step back and verify each assumption",
+  "ok": [
+   "definition-of-done"
+  ]
+ },
+ {
+  "p": "go through this repo, fix the broken checkout, then update the docs and tell me if it's safe to ship",
+  "ok": [
+   "dynamic-workflow"
+  ]
+ },
+ {
+  "p": "gw punya masalah campur aduk: halaman lambat, ada bug di form, terus mau rilis besok. bantuin urutin dan kerjain",
+  "ok": [
+   "dynamic-workflow",
+   "task-delegation"
+  ]
+ },
+ {
+  "p": "not sure what kind of task this is - the client wants some changes to their blog, maybe a migration, maybe an audit. handle it.",
+  "ok": [
+   "dynamic-workflow"
+  ]
+ },
+ {
+  "p": "TypeError: Cannot read properties of undefined (reading 'map') at OrderList.jsx:42 - what's this?",
+  "ok": [
+   "error-runbook"
+  ]
+ },
+ {
+  "p": "deploy gagal, ini lognya: ERR_MODULE_NOT_FOUND cannot find package 'sharp'. tolong analisis error",
+  "ok": [
+   "error-runbook"
+  ]
+ },
+ {
+  "p": "Production returns ECONNRESET on /checkout since this morning, check if we've seen this before in the runbook",
+  "ok": [
+   "error-runbook"
+  ]
+ },
+ {
+  "p": "also look at ../billing-service, it's a different repo on the same server, I need a small change there",
+  "ok": [
+   "external-project-scope"
+  ]
+ },
+ {
+  "p": "tolong kerjain di folder di luar project ini, /srv/apps/landing-lama, tapi pakai konvensi project sini",
+  "ok": [
+   "external-project-scope"
+  ]
+ },
+ {
+  "p": "this is out of scope for the current repo but I want you to patch the sibling app using our infra notes",
+  "ok": [
+   "external-project-scope"
+  ]
+ },
+ {
+  "p": "log what we just finished into the changelog and put the new decision in the right doc",
+  "ok": [
+   "living-docs"
+  ]
+ },
+ {
+  "p": "docs-nya kayaknya udah nggak sinkron satu sama lain, tolong rapikan dan catat keputusan baru ini",
+  "ok": [
+   "living-docs"
+  ]
+ },
+ {
+  "p": "trim our AGENTS entrypoint file down and set up the reading order for new sessions",
+  "ok": [
+   "living-docs"
+  ]
+ },
+ {
+  "p": "npm install keeps failing with ERESOLVE and then port 3000 is already in use, help me get this running locally",
+  "ok": [
+   "local-dev-setup"
+  ]
+ },
+ {
+  "p": "gimana jalanin repo ini di lokal? database connection refused terus",
+  "ok": [
+   "local-dev-setup"
+  ]
+ },
+ {
+  "p": "npm install gagal terus, port 3000 already in use, gimana fix-nya?",
+  "ok": [
+   "local-dev-setup"
+  ]
+ },
+ {
+  "p": "can I restart nginx right now? there are live customers on the site",
+  "ok": [
+   "maintenance-window-ops"
+  ]
+ },
+ {
+  "p": "mau reboot node yang jalanin database, aman nggak sekarang? cek dulu apa aja yang ada di situ",
+  "ok": [
+   "maintenance-window-ops"
+  ]
+ },
+ {
+  "p": "we need to switch the primary database to the replica, when and how do we do it without taking sites down?",
+  "ok": [
+   "maintenance-window-ops"
+  ]
+ },
+ {
+  "p": "/code analyse why the cart total is wrong",
+  "ok": [
+   "mode-gates"
+  ]
+ },
+ {
+  "p": "/plan sekalian cari tahu dulu penyebabnya, jangan ubah kode, nanti tanya dulu kalau mau fix",
+  "ok": [
+   "mode-gates"
+  ]
+ },
+ {
+  "p": "you found the bug while just investigating - do you go ahead and fix it or ask me first?",
+  "ok": [
+   "mode-gates"
+  ]
+ },
+ {
+  "p": "we need to swap the auth system from sessions to JWT across the whole app; map the files first and write a plan",
+  "ok": [
+   "plan-then-code"
+  ]
+ },
+ {
+  "p": "bikin rencana dulu sebelum implementasi fitur multi-tenant ini, petakan file dan dependensinya",
+  "ok": [
+   "plan-then-code"
+  ]
+ },
+ {
+  "p": "implement the approved plan layer by layer with tests for each layer",
+  "ok": [
+   "plan-then-code"
+  ]
+ },
+ {
+  "p": "keep an eye on the production logs and tell me when something breaks",
+  "ok": [
+   "prod-log-watch"
+  ]
+ },
+ {
+  "p": "ada alert 5xx banyak banget di prod barusan, tolong pantau dan triase",
+  "ok": [
+   "prod-log-watch"
+  ]
+ },
+ {
+  "p": "health check DOWN just fired, a stack trace is coming from prod - handle it",
+  "ok": [
+   "prod-log-watch",
+   "error-runbook"
+  ]
+ },
+ {
+  "p": "ship the new frontend to production, it includes a schema migration",
+  "ok": [
+   "release-deploy"
+  ]
+ },
+ {
+  "p": "tolong deploy ke production, rilis versi baru, dan kasih perintah rollback-nya",
+  "ok": [
+   "release-deploy"
+  ]
+ },
+ {
+  "p": "go live with the redesign tonight, run the checklist and purge cache after",
+  "ok": [
+   "release-deploy"
+  ]
+ },
+ {
+  "p": "tolong deploy ke prod, but only after tests pass and you show me proof",
+  "ok": [
+   "release-deploy",
+   "definition-of-done"
+  ]
+ },
+ {
+  "p": "the test suite is killing my NAS, run it on the worker node instead",
+  "ok": [
+   "remote-offload"
+  ]
+ },
+ {
+  "p": "build-nya berat banget bikin mesin utama lemot, jalankan di remote aja",
+  "ok": [
+   "remote-offload"
+  ]
+ },
+ {
+  "p": "offload the lint and type check to a CI runner or container, load average is through the roof",
+  "ok": [
+   "remote-offload"
+  ]
+ },
+ {
+  "p": "hotfix prod: just copy the one patched controller over, it's already merged to main",
+  "ok": [
+   "safe-hotfix"
+  ]
+ },
+ {
+  "p": "ada bug kecil di backend udah ditest, tolong patch production now tanpa full release",
+  "ok": [
+   "safe-hotfix"
+  ]
+ },
+ {
+  "p": "ship this one-line fix to prod right away with a backup and auto revert",
+  "ok": [
+   "safe-hotfix"
+  ]
+ },
+ {
+  "p": "do a quick security check on this snippet I pasted",
+  "ok": [
+   "security-audit-cycle"
+  ]
+ },
+ {
+  "p": "jalankan off-sec dulu buat audit OWASP, nanti lanjut def-sec buat fix temuannya",
+  "ok": [
+   "security-audit-cycle"
+  ]
+ },
+ {
+  "p": "any vulnerabilities in my login controller? review it for bugs and severity",
+  "ok": [
+   "security-audit-cycle"
+  ]
+ },
+ {
+  "p": "while you're refactoring, also check the other thing I asked about earlier and watch that alert, run them in parallel",
+  "ok": [
+   "task-delegation"
+  ]
+ },
+ {
+  "p": "gw punya tiga kerjaan terpisah: update README, cari bug di payment, sama benerin CSS. bagi-bagi aja ke sub-agent biar paralel",
+  "ok": [
+   "task-delegation"
+  ]
+ },
+ {
+  "p": "this job is huge, hand off pieces to background agents and keep checking on them",
+  "ok": [
+   "task-delegation"
+  ]
+ },
+ {
+  "p": "my landing page scores 54 on Lighthouse, improve Core Web Vitals and give me before/after numbers",
+  "ok": [
+   "web-quality-audit"
+  ]
+ },
+ {
+  "p": "optimasi SEO blog gw dong, tambahin structured data sama llms.txt",
+  "ok": [
+   "web-quality-audit"
+  ]
+ },
+ {
+  "p": "run an accessibility and bundle size pass on the dashboard",
+  "ok": [
+   "web-quality-audit"
+  ]
+ },
+ {
+  "p": "move the old WordPress site from the old vhost into the new hosting account without downtime",
+  "ok": [
+   "zero-downtime-migration"
+  ]
+ },
+ {
+  "p": "pindahkan situs dari server lama ke hosting baru, cutover aman ya",
+  "ok": [
+   "zero-downtime-migration"
+  ]
+ },
+ {
+  "p": "migrate our API from pm2 on the old box to the new proxy route with rollback",
+  "ok": [
+   "zero-downtime-migration"
+  ]
+ },
+ {
+  "p": "what is a closure in javascript?",
+  "ok": []
+ },
+ {
+  "p": "thanks, that was helpful!",
+  "ok": []
+ },
+ {
+  "p": "tell me a joke about programmers",
+  "ok": []
+ },
+ {
+  "p": "what's the capital of Australia?",
+  "ok": []
+ },
+ {
+  "p": "explain the difference between TCP and UDP",
+  "ok": []
+ },
+ {
+  "p": "who won the world cup in 2018?",
+  "ok": []
+ },
+ {
+  "p": "write me a haiku about autumn",
+  "ok": []
+ },
+ {
+  "p": "how many ounces in a pound",
+  "ok": []
+ },
+ {
+  "p": "hey, how's it going?",
+  "ok": []
+ },
+ {
+  "p": "what does REST stand for?",
+  "ok": []
+ },
+ {
+  "p": "jelasin apa itu docker",
+  "ok": []
+ },
+ {
+  "p": "makasih ya, udah jelas",
+  "ok": []
+ },
+ {
+  "p": "kasih joke receh dong",
+  "ok": []
+ },
+ {
+  "p": "apa bedanya let sama const?",
+  "ok": []
+ },
+ {
+  "p": "rekomendasi film buat weekend dong",
+  "ok": []
+ },
+ {
+  "p": "halo, lagi ngapain?",
+  "ok": []
+ },
+ {
+  "p": "what's the meaning of 'kepo' in bahasa gaul?",
+  "ok": []
+ },
+ {
+  "p": "thanks bro, mantap banget",
+  "ok": []
+ }
+]

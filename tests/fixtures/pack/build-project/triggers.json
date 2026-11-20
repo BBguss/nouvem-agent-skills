@@ -1,0 +1,22 @@
+{
+  "keywords": [
+    "build me",
+    "portfolio",
+    "portofolio",
+    "bikin web",
+    "buat website",
+    "landing page",
+    "new app"
+  ],
+  "patterns": [
+    "\\b(build|create|make|bikin|buat)\\b.{0,30}\\b(web|website|app|aplikasi|site|portfolio|portofolio)\\b"
+  ],
+  "files": [],
+  "negative": [
+    "^\\s*(why|kenapa|mengapa)\\b"
+  ],
+  "slash": [
+    "/new"
+  ],
+  "priority": 1
+}

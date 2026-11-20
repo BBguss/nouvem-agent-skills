@@ -1,0 +1,41 @@
+{
+  "keywords": [
+    "workflow",
+    "next step",
+    "what should i do",
+    "where do i start",
+    "plan this",
+    "end to end",
+    "and then deploy",
+    "and put it online",
+    "selanjutnya",
+    "mulai dari mana",
+    "terus deploy",
+    "sekalian",
+    "sama sekalian"
+  ],
+  "patterns": [
+    "\\b(and|then|also|plus|terus|lalu|kemudian|sekalian|dan juga)\\b.{0,40}\\b(deploy|release|fix|add|build|test|analy[sz]e|migrate|perbaiki|tambah|bikin|buat|analisis|online)",
+    "\\b(how (do|should|can) (i|we)|gimana (cara|caranya)|bagaimana (cara|caranya)|what('s| is) the best way)\\b",
+    "\\b(start|mulai|begin)\\b.{0,30}\\b(where|dari mana|how|gimana)\\b",
+    "\\b(build|create|make|bikin|buat)\\b.{0,60}\\b(then|and then|terus|lalu|kemudian)\\b.{0,40}\\b(deploy|audit|test|release|rilis)"
+  ],
+  "files": [
+    "AGENTS.md",
+    "CLAUDE.md",
+    "GEMINI.md",
+    "package.json",
+    "pyproject.toml",
+    "composer.json",
+    "go.mod",
+    ".git"
+  ],
+  "negative": [],
+  "slash": [
+    "/workflow",
+    "/do",
+    "/route",
+    "/auto"
+  ],
+  "priority": 0
+}

@@ -1,0 +1,54 @@
+{
+  "keywords": [
+    "pretooluse",
+    "posttooluse",
+    "agent hook",
+    "agent hooks",
+    "lifecycle hook",
+    "safety hook",
+    "guardrail hook",
+    "block dangerous commands",
+    "block rm -rf",
+    "prevent force push",
+    "protect production folder",
+    "load guard",
+    "file corruption check",
+    "hook pengaman",
+    "pasang hook",
+    "guard agen",
+    "blokir perintah berbahaya",
+    "lindungi folder produksi",
+    "hooks de seguridad",
+    "sicherheits-hooks",
+    "blocks the agent",
+    "block the agent",
+    "stop the agent from",
+    "prevent the agent",
+    "agent guard",
+    "pasang guard",
+    "cegah agent"
+  ],
+  "patterns": [
+    "\\b(set ?up|add|install|write|create|debug|test|fix)\\b.*\\b(pre|post)-?tool-?use\\b",
+    "\\b(block|prevent|deny|stop)\\b.*\\b(agent|claude|ai|model)\\b.*\\b(rm -rf|force[- ]push|killall|pkill|write(s|ing)? to prod)",
+    "\\b(hooks?|guards?)\\b.*\\b(settings\\.json|hooks\\.json|claude code|gemini cli|codex)\\b",
+    "\\b(pasang|buat|uji|perbaiki)\\b.*\\b(hook|guard)\\b.*\\b(agen|agent|claude|ai)\\b",
+    "\\b(agent|ai)\\b.*\\b(keeps?|kept)\\b.*\\b(deleting|overwriting|killing|touching)\\b.*\\b(prod|production|files|processes)\\b",
+    "\\b(hook|guard|block|prevent|cegah|blokir)\\b.{0,40}\\b(agent|ai)\\b.{0,40}\\b(writ\\w*|delet\\w*|prod\\w*|rm|push|command|menulis|hapus)"
+  ],
+  "files": [
+    "hooks.json",
+    ".claude/settings.json",
+    ".gemini/settings.json"
+  ],
+  "negative": [
+    "\\breact hooks?\\b",
+    "\\buse(State|Effect|Memo|Callback)\\b",
+    "\\bgit hooks? for linting\\b"
+  ],
+  "slash": [
+    "/hooks",
+    "/safety-hooks"
+  ],
+  "priority": 2
+}

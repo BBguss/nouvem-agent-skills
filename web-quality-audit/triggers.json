@@ -1,0 +1,56 @@
+{
+  "keywords": [
+    "lighthouse",
+    "core web vitals",
+    "web vitals",
+    "pagespeed",
+    "page speed",
+    "seo audit",
+    "optimize seo",
+    "structured data",
+    "json-ld",
+    "llms.txt",
+    "sitemap.xml",
+    "make it crawlable",
+    "perf pass",
+    "accessibility audit",
+    "a11y audit",
+    "bundle size",
+    "optimasi seo",
+    "audit seo",
+    "kecepatan halaman",
+    "skor lighthouse",
+    "aksesibilitas",
+    "referencement",
+    "optimizacion seo",
+    "seo-optimierung",
+    "accessible",
+    "accessibility",
+    "responsive",
+    "mobile friendly",
+    "responsif"
+  ],
+  "patterns": [
+    "\\b(improve|boost|audit|check|optimi[sz]e|fix)\\b.*\\b(lighthouse|seo|core web vitals|page ?speed|performance score|accessibility)\\b",
+    "\\b(lighthouse|pagespeed)\\b.*\\b(score|below|under|low|90|100)\\b",
+    "\\b(add|create|generate|write)\\b.*\\b(llms\\.txt|sitemap|robots\\.txt|json-ld|structured data|og tags?|meta tags?)\\b",
+    "\\b(tingkatkan|perbaiki|audit|optimalkan)\\b.*\\b(seo|lighthouse|kecepatan|performa|aksesibilitas)\\b",
+    "\\b(landing page|portfolio|blog|dashboard|storefront)\\b.*\\b(slow|not indexed|not ranking|lcp|cls|inp)\\b",
+    "\\b(google|search engines?|ai crawlers?)\\b.*\\b(can'?t|cannot|not)\\b.*\\b(index|crawl|find|read)\\b"
+  ],
+  "files": [
+    "lighthouserc.json",
+    "lighthouserc.js",
+    "robots.txt",
+    "sitemap.xml",
+    "llms.txt"
+  ],
+  "negative": [
+    "\\bfix\\b.*\\bsingle\\b.*\\b(css|button|alignment)\\b"
+  ],
+  "slash": [
+    "/seo",
+    "/web-audit"
+  ],
+  "priority": 2
+}

@@ -1,0 +1,19 @@
+{
+  "keywords": [
+    "root cause",
+    "analisis",
+    "analyse",
+    "investigate",
+    "kenapa",
+    "why does"
+  ],
+  "patterns": [
+    "^\\s*(why|kenapa|mengapa|kok)\\b"
+  ],
+  "files": [],
+  "negative": [],
+  "slash": [
+    "/analyze"
+  ],
+  "priority": 1
+}

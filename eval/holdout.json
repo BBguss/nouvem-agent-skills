@@ -1,0 +1,457 @@
+[
+ {
+  "p": "I want a guard that refuses any bash command containing rm -rf on our uploads dir or a git push --force. How do I wire that into the agent?",
+  "ok": [
+   "agent-safety-hooks"
+  ]
+ },
+ {
+  "p": "bikin pengaman dong biar agent gak bisa nulis ke folder production atau reload nginx manual, pasangnya di mana ya",
+  "ok": [
+   "agent-safety-hooks"
+  ]
+ },
+ {
+  "p": "my pre-command check that's supposed to block secrets in command lines isn't firing, can you debug the hook and test it with a fake command",
+  "ok": [
+   "agent-safety-hooks"
+  ]
+ },
+ {
+  "p": "We just added POST /api/invoices/:id/void to the admin panel and we also have an MCP server for the assistant. Make sure the agent side gets a matching tool.",
+  "ok": [
+   "agent-tool-parity"
+  ]
+ },
+ {
+  "p": "cek dong semua route di dashboard kita udah ada tool MCP-nya belum, atau ada alasan kenapa dikecualiin",
+  "ok": [
+   "agent-tool-parity"
+  ]
+ },
+ {
+  "p": "new feature: users can export their orders as CSV. our function-calling API for the chatbot mirrors the UI, so what do I need to add there and how do we enforce it in tests?",
+  "ok": [
+   "agent-tool-parity"
+  ]
+ },
+ {
+  "p": "why is the product listing page taking 6 seconds to load? don't change anything yet, just figure out what's going on",
+  "ok": [
+   "analyze-problem"
+  ]
+ },
+ {
+  "p": "kok bisa ya test login kadang lolos kadang gagal tanpa ada perubahan kode? tolong selidiki dulu penyebabnya",
+  "ok": [
+   "analyze-problem"
+  ]
+ },
+ {
+  "p": "Our nightly build suddenly started failing after the last merge. Before touching anything, I'd like to understand the root cause and see options.",
+  "ok": [
+   "analyze-problem"
+  ]
+ },
+ {
+  "p": "build me a personal portfolio site with a projects grid, an about section and a contact form. Deploy later.",
+  "ok": [
+   "build-project"
+  ]
+ },
+ {
+  "p": "bikinin aplikasi SaaS buat manajemen invoice freelancer, ada login, dashboard, sama langganan bulanan",
+  "ok": [
+   "build-project"
+  ]
+ },
+ {
+  "p": "I need a REST API for a mobile app backend: users, posts, likes, push token registration. Start from scratch, Node or Go, your pick.",
+  "ok": [
+   "build-project"
+  ]
+ },
+ {
+  "p": "add a 'phone number' field to the customer profile form and save it in the DB, with basic validation",
+  "ok": [
+   "code-change"
+  ]
+ },
+ {
+  "p": "tolong rename fungsi getUsr jadi getUser di seluruh repo dan pecah file helpers.js yang kepanjangan itu",
+  "ok": [
+   "code-change"
+  ]
+ },
+ {
+  "p": "bump axios to the latest minor and fix whatever call sites break, small change please",
+  "ok": [
+   "code-change"
+  ]
+ },
+ {
+  "p": "I need to ssh into the staging box and run a migration but I don't have the password. What's the right way to get access?",
+  "ok": [
+   "credential-broker"
+  ]
+ },
+ {
+  "p": "password database prod mau dirotasi, tolong catat yang baru dan update semua yang pakai tanpa nempel di chat",
+  "ok": [
+   "credential-broker"
+  ]
+ },
+ {
+  "p": "this script needs sudo and an API token to run. how should the agent supply them without me pasting anything?",
+  "ok": [
+   "credential-broker"
+  ]
+ },
+ {
+  "p": "ok the checkout bug should be fixed now, can you verify it properly before we call it finished?",
+  "ok": [
+   "definition-of-done"
+  ]
+ },
+ {
+  "p": "udah kelar belum fitur wishlist-nya? jangan bilang selesai sebelum ada bukti tes lulus ya",
+  "ok": [
+   "definition-of-done"
+  ]
+ },
+ {
+  "p": "I've tried to fix this flaky upload three times and it keeps breaking; what's the sane way to stop looping and decide what to do next?",
+  "ok": [
+   "definition-of-done"
+  ]
+ },
+ {
+  "p": "Please add social login to the e-commerce site, then figure out why cart totals are off by a cent, and afterwards ship both to production and write up what changed.",
+  "ok": [
+   "dynamic-workflow"
+  ]
+ },
+ {
+  "p": "tolong audit keamanan repo ini, benerin yang kritis, terus dokumentasiin hasilnya dan deploy ke produksi",
+  "ok": [
+   "dynamic-workflow"
+  ]
+ },
+ {
+  "p": "Take over this old WordPress blog: move it onto the new server, redo the theme speed issues, and set up monitoring on the logs afterwards.",
+  "ok": [
+   "dynamic-workflow"
+  ]
+ },
+ {
+  "p": "TypeError: Cannot read properties of undefined (reading 'map') at OrderList.render (OrderList.jsx:42) -- seeing this on staging",
+  "ok": [
+   "error-runbook"
+  ]
+ },
+ {
+  "p": "analisis error ini dong: ECONNREFUSED 127.0.0.1:3306 waktu deploy tadi malam",
+  "ok": [
+   "error-runbook"
+  ]
+ },
+ {
+  "p": "502 Bad Gateway started appearing on checkout in prod an hour ago, here's the log line: upstream timed out (110: Connection timed out)",
+  "ok": [
+   "error-runbook",
+   "prod-log-watch"
+  ]
+ },
+ {
+  "p": "there's another project in /srv/other-app that I need to patch, outside this repo, but use the same server map and keep prod locks",
+  "ok": [
+   "external-project-scope"
+  ]
+ },
+ {
+  "p": "project lain di folder sebelah, bukan yang ini, tolong benerin config-nya tapi riwayat kerjanya dipisah ya",
+  "ok": [
+   "external-project-scope"
+  ]
+ },
+ {
+  "p": "can you look at our sibling repo (the marketing site, different codebase) and update its footer? it lives on the same servers",
+  "ok": [
+   "external-project-scope"
+  ]
+ },
+ {
+  "p": "we finished the billing refactor; where should the decision about switching to idempotency keys be recorded, and add the changelog entry",
+  "ok": [
+   "living-docs"
+  ]
+ },
+ {
+  "p": "dokumennya kayaknya udah gak sinkron, README bilang port 3000 tapi arsitektur bilang 8080, rapihin dong",
+  "ok": [
+   "living-docs"
+  ]
+ },
+ {
+  "p": "I cloned this repo and npm install explodes with some peer dependency thing. Help me get it running locally.",
+  "ok": [
+   "local-dev-setup"
+  ]
+ },
+ {
+  "p": "gak bisa jalan di lokal nih, port 3000 udah kepake terus database connection refused. tolong setup env dev-nya",
+  "ok": [
+   "local-dev-setup"
+  ]
+ },
+ {
+  "p": "set up a local environment with Postgres in Docker and seed some sample data for this API project",
+  "ok": [
+   "local-dev-setup"
+  ]
+ },
+ {
+  "p": "Is it ok to restart the proxy right now? we have customers on the shop and I don't want to drop connections",
+  "ok": [
+   "maintenance-window-ops"
+  ]
+ },
+ {
+  "p": "mau reboot server yang jalanin database, kapan waktu aman dan apa aja yang harus dicek dulu?",
+  "ok": [
+   "maintenance-window-ops"
+  ]
+ },
+ {
+  "p": "we need to switch the primary database over to the new replica. it will cause a brief outage for the sites, how do we schedule and do this safely?",
+  "ok": [
+   "maintenance-window-ops"
+  ]
+ },
+ {
+  "p": "/code but first just find out why the session cookie is dropped, don't edit anything",
+  "ok": [
+   "mode-gates"
+  ]
+ },
+ {
+  "p": "/plan dulu ya, jangan langsung ngoding. analisis kenapa query-nya lambat terus kalau perlu fix tanya aku",
+  "ok": [
+   "mode-gates"
+  ]
+ },
+ {
+  "p": "This touches auth, billing and the DB schema at once. Map out the affected files and write a plan before implementing anything.",
+  "ok": [
+   "plan-then-code"
+  ]
+ },
+ {
+  "p": "rencana udah disetujui, sekarang eksekusi dari layer terdalam dulu sambil tes per layer",
+  "ok": [
+   "plan-then-code"
+  ]
+ },
+ {
+  "p": "Need to restructure our notification system across the API, the queue workers and the UI. Where do I start and what files are involved?",
+  "ok": [
+   "plan-then-code"
+  ]
+ },
+ {
+  "p": "keep an eye on the prod logs for me and tell me when something weird shows up",
+  "ok": [
+   "prod-log-watch"
+  ]
+ },
+ {
+  "p": "ada alert 5xx burst barusan dari server produksi, tolong triase apakah itu bug aplikasi atau cuma noise",
+  "ok": [
+   "prod-log-watch"
+  ]
+ },
+ {
+  "p": "the health check says DOWN for the API node and I see a stack trace scrolling by in the monitor output, handle it",
+  "ok": [
+   "prod-log-watch",
+   "error-runbook"
+  ]
+ },
+ {
+  "p": "ready to go live with the new landing page, please run the pre-release checks and push it to production",
+  "ok": [
+   "release-deploy"
+  ]
+ },
+ {
+  "p": "deploy versi baru ke produksi dong, ada migrasi skema dan dependency baru jadi gak bisa hotfix",
+  "ok": [
+   "release-deploy"
+  ]
+ },
+ {
+  "p": "release the new dashboard build, I want a rollback command ready in case it goes wrong",
+  "ok": [
+   "release-deploy"
+  ]
+ },
+ {
+  "p": "the NAS gets crushed whenever I run the full jest suite. can we run the tests on another box and bring back the results?",
+  "ok": [
+   "remote-offload"
+  ]
+ },
+ {
+  "p": "build-nya berat banget bikin mesin ngelag, jalanin di worker node aja dong",
+  "ok": [
+   "remote-offload"
+  ]
+ },
+ {
+  "p": "load average keeps spiking when the linter and bundler run. offload them to a CI runner with a local fallback",
+  "ok": [
+   "remote-offload"
+  ]
+ },
+ {
+  "p": "fix for the null-pointer in the webhook handler is committed and tested. get it onto prod right now, no full release",
+  "ok": [
+   "safe-hotfix"
+  ]
+ },
+ {
+  "p": "hotfix produksi dong, cuma satu file backend yang berubah, udah ada di main",
+  "ok": [
+   "safe-hotfix"
+  ]
+ },
+ {
+  "p": "copy the changed server files to production and reload gracefully, with an automatic revert if the health check fails",
+  "ok": [
+   "safe-hotfix"
+  ]
+ },
+ {
+  "p": "can you review this snippet for security holes? app.get('/user/:id', (req,res)=> db.query('SELECT * FROM users WHERE id='+req.params.id))",
+  "ok": [
+   "security-audit-cycle"
+  ]
+ },
+ {
+  "p": "jalanin audit offensive ala OWASP ke aplikasi ini, catat temuannya, terus perbaiki satu-satu",
+  "ok": [
+   "security-audit-cycle"
+  ]
+ },
+ {
+  "p": "run a red team style pass on our admin panel and then harden whatever you find, tracking open items in a ledger file",
+  "ok": [
+   "security-audit-cycle"
+  ]
+ },
+ {
+  "p": "I have three unrelated things going on: a bug report, a docs update and a dependency audit. Split them up and run them in parallel with different model sizes.",
+  "ok": [
+   "task-delegation",
+   "dynamic-workflow"
+  ]
+ },
+ {
+  "p": "sambil kamu ngerjain migrasi ini, ada permintaan sampingan buat cek log, tolong kerjain barengan pakai sub-agent",
+  "ok": [
+   "task-delegation"
+  ]
+ },
+ {
+  "p": "my portfolio scores 54 on Lighthouse mobile and the images are huge. get it into the green and show before/after numbers",
+  "ok": [
+   "web-quality-audit"
+  ]
+ },
+ {
+  "p": "optimasi SEO blog kita dong, tambah structured data, sitemap, dan llms.txt biar gampang dicrawl",
+  "ok": [
+   "web-quality-audit"
+  ]
+ },
+ {
+  "p": "the SaaS dashboard bundle is 3MB and the CLS is awful on phones. do a performance and accessibility pass with measurements.",
+  "ok": [
+   "web-quality-audit"
+  ]
+ },
+ {
+  "p": "move my WordPress shop from the old VPS into the hosting panel account with no downtime, and keep a way back",
+  "ok": [
+   "zero-downtime-migration"
+  ]
+ },
+ {
+  "p": "pindahkan situs company profile dari folder lama ke vhost baru, cutover-nya jangan bikin down ya",
+  "ok": [
+   "zero-downtime-migration"
+  ]
+ },
+ {
+  "p": "we're moving our API from a hand-run pm2 process to the new platform behind a new proxy route. plan the cutover and clean up the old route after.",
+  "ok": [
+   "zero-downtime-migration"
+  ]
+ },
+ {
+  "p": "what's the difference between let and const in JavaScript?",
+  "ok": []
+ },
+ {
+  "p": "apa bedanya array sama linked list?",
+  "ok": []
+ },
+ {
+  "p": "hey, how's it going today?",
+  "ok": []
+ },
+ {
+  "p": "halo, lagi ngapain nih?",
+  "ok": []
+ },
+ {
+  "p": "explain what a closure is, in simple words",
+  "ok": []
+ },
+ {
+  "p": "jelasin dong apa itu REST API secara singkat",
+  "ok": []
+ },
+ {
+  "p": "what is the capital of Australia?",
+  "ok": []
+ },
+ {
+  "p": "siapa penemu lampu pijar?",
+  "ok": []
+ },
+ {
+  "p": "is recursion always slower than a loop?",
+  "ok": []
+ },
+ {
+  "p": "kapan sebaiknya pakai SQL dan kapan NoSQL, secara konsep aja",
+  "ok": []
+ },
+ {
+  "p": "tell me a fun fact about octopuses",
+  "ok": []
+ },
+ {
+  "p": "makasih ya, kamu keren!",
+  "ok": []
+ },
+ {
+  "p": "what does 'immutable' mean in programming?",
+  "ok": []
+ },
+ {
+  "p": "bedanya http sama https apa sih?",
+  "ok": []
+ }
+]

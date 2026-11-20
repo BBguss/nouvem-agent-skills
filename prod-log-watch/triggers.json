@@ -1,0 +1,51 @@
+{
+  "keywords": [
+    "watch prod",
+    "watch production",
+    "monitor prod",
+    "monitor the logs",
+    "tail production logs",
+    "production logs",
+    "prod log",
+    "pantau log",
+    "pantau prod",
+    "pantau produksi",
+    "monitor log produksi",
+    "cek log prod",
+    "surveiller les logs",
+    "logs de produccion",
+    "produktionslogs",
+    "监控日志",
+    "502 errors",
+    "500 errors",
+    "5xx",
+    "errors in prod",
+    "error di prod",
+    "prod down",
+    "site down",
+    "burst of errors"
+  ],
+  "patterns": [
+    "\\b(watch|monitor|tail|follow)\\b.*\\b(prod|production|live)\\b.*\\b(logs?|errors?)\\b",
+    "\\b(fix|investigate|check|analy[sz]e)\\b.*\\berror\\b.*\\b(in|from)\\b.*\\b(prod|production)\\b.*\\blogs?\\b",
+    "\\b(pantau|awasi|cek)\\b.*\\b(log|error)\\b.*\\b(prod|produksi)\\b",
+    "\\b(5\\d\\d|http 500|health ?check)\\b.*\\b(down|failing|alert)\\b.*\\b(prod|production)\\b",
+    "\\b(alert|monitor)\\b.*\\b(stack ?trace|exception|TypeError|unhandled)\\b",
+    "\\b(5\\d\\d|errors?|exceptions?)\\b.{0,30}\\b(in|di|on) (prod|production|produksi|live)\\b"
+  ],
+  "files": [
+    "ecosystem.config.js",
+    "ecosystem.config.cjs",
+    "pm2.config.js",
+    "Procfile",
+    "docker-compose.yml"
+  ],
+  "negative": [
+    "\\b(local|localhost|dev server)\\b.*\\bonly\\b"
+  ],
+  "slash": [
+    "/watch-prod",
+    "/prod-watch"
+  ],
+  "priority": 2
+}

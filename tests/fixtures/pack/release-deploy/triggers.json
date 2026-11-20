@@ -1,0 +1,23 @@
+{
+  "keywords": [
+    "deploy",
+    "release",
+    "go live",
+    "push to production",
+    "rilis"
+  ],
+  "patterns": [
+    "\\b(deploy|rilis|release)\\b.{0,20}\\b(prod|production|produksi|live)\\b"
+  ],
+  "files": [
+    "Dockerfile",
+    "ecosystem.config.js"
+  ],
+  "negative": [
+    "\\b(dry[- ]run only|jangan deploy|do not deploy)\\b"
+  ],
+  "slash": [
+    "/deploy"
+  ],
+  "priority": 1
+}

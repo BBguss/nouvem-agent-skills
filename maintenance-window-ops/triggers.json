@@ -1,0 +1,14 @@
+{
+  "keywords": ["maintenance window", "reboot the server", "reboot node", "restart the server", "restart nginx", "reload nginx", "database switchover", "db failover", "remount storage", "can i reboot", "can i restart", "scheduled downtime", "jendela maintenance", "reboot server", "restart server", "restart node", "jendela perawatan", "boleh direstart", "ganti database utama", "redemarrer le serveur", "reiniciar el servidor", "server neustarten"],
+  "patterns": [
+    "\\b(reboot|restart|reload)\\b.*\\b(server|node|nginx|proxy|database|db|haproxy|apache|caddy)\\b",
+    "\\bcan (i|we)\\b.*\\b(reboot|restart|reload)\\b.*\\b(now|safely)\\b",
+    "\\b(boleh|aman)\\b.*\\b(reboot|restart|reload)\\b",
+    "\\b(switchover|failover|fail over|cutover)\\b.*\\b(db|database|replica|primary|node)\\b",
+    "\\b(downtime|take (it|the site) down|drop sites?)\\b.*\\b(window|schedule|night|tonight)\\b"
+  ],
+  "files": [],
+  "negative": ["\\b(restart|reload)\\b.*\\b(dev server|local|vite|hot reload)\\b", "\\bpm2 reload\\b"],
+  "slash": ["/maintenance"],
+  "priority": 2
+}

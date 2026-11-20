@@ -1,0 +1,8 @@
+{
+  "keywords": ["read-only", "read only", "do not change anything", "don't change anything", "find out why", "investigate", "analisis", "analisa", "cari tahu", "jangan diubah", "jangan ubah", "hanya baca", "analiza", "/plan", "/code", "/ask", "/deploy"],
+  "patterns": ["\\b(analy[sz]e|investigate|find out|look into|figure out)\\b.*\\b(why|what|how|cause)", "\\b(analisis|analisa|cari tahu|selidiki)\\b.*\\b(kenapa|mengapa|penyebab|bagaimana)", "\\b(just|only) (analy[sz]e|look|investigate|read)\\b", "\\b(don'?t|do not|jangan) (change|edit|modify|fix|ubah|perbaiki)\\b"],
+  "files": [],
+  "negative": [],
+  "slash": ["/plan", "/code", "/ask", "/deploy"],
+  "priority": 3
+}

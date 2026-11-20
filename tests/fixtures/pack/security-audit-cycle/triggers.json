@@ -1,0 +1,22 @@
+{
+  "keywords": [
+    "cek keamanan",
+    "security review",
+    "vulnerability",
+    "kerentanan",
+    "pentest",
+    "owasp"
+  ],
+  "patterns": [
+    "\\b(cek|periksa|check|audit|review)\\b.{0,30}\\b(keamanan|security|secure)\\b"
+  ],
+  "files": [
+    "SECURITY.md"
+  ],
+  "negative": [],
+  "slash": [
+    "/off-sec",
+    "/def-sec"
+  ],
+  "priority": 1
+}

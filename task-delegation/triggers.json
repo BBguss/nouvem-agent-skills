@@ -1,0 +1,40 @@
+{
+  "keywords": [
+    "sub-agent",
+    "subagent",
+    "sub agent",
+    "in parallel",
+    "parallel jobs",
+    "background agent",
+    "delegate",
+    "delegation",
+    "side request",
+    "while you are at it",
+    "sambil itu",
+    "secara paralel",
+    "kerjakan bersamaan",
+    "tugas sampingan",
+    "delegasikan",
+    "en paralelo",
+    "en parallèle",
+    "unrelated tasks",
+    "several tasks",
+    "multiple tasks",
+    "three tasks",
+    "beberapa tugas",
+    "banyak tugas",
+    "sekaligus"
+  ],
+  "patterns": [
+    "\\b(also|and then|meanwhile|at the same time)\\b.*\\b(another|separate|second) (task|job|request|thing)",
+    "\\b(run|do|work on) (these|both|them|all) .*(parallel|simultaneously|at once|together)",
+    "\\b(sambil|selagi|sembari)\\b.*\\b(kerjakan|cek|periksa|buat|jalankan)",
+    "\\b(spawn|launch|start|use) (a |some |several )?(sub-?agents?|background agents?|workers?)"
+  ],
+  "files": [],
+  "negative": [],
+  "slash": [
+    "/delegate"
+  ],
+  "priority": 1
+}

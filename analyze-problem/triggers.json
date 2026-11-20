@@ -1,0 +1,28 @@
+{
+  "keywords": [
+    "analyze", "analyse", "analysis", "investigate", "investigation", "root cause", "rca", "diagnose", "diagnosis",
+    "why does", "why is", "why did", "what's causing", "what is causing", "figure out", "find out why",
+    "slow page", "too slow", "performance issue", "memory leak", "flaky test", "build fails", "build failing",
+    "ci failing", "pipeline failing", "unexpected behavior", "doesn't work", "not working", "post-mortem", "postmortem",
+    "trade-off", "tradeoff", "pros and cons", "should we use",
+    "analisis", "analisa", "menganalisis", "cari tahu", "kenapa", "mengapa", "kok bisa", "kok lambat",
+    "penyebab", "akar masalah", "lemot", "lambat banget", "nggak jalan", "gak jalan", "tidak berfungsi",
+    "selidiki", "investigasi", "bedah masalah",
+    "por qué", "analizar", "pourquoi", "analyser", "warum", "analysieren"
+  ],
+  "patterns": [
+    "^\\s*(why|kenapa|mengapa|kok|por ?qué|pourquoi|warum)\\b",
+    "\\b(why|kenapa|mengapa|kok)\\b.{0,60}\\b(fail|failing|slow|break|broken|crash|error|happen|lambat|lemot|gagal|rusak|error|muncul|terjadi|beda|berbeda)",
+    "\\b(analy[sz]e|analisis|analisa|investigate|selidiki|diagnose|cari tahu|find out)\\b.{0,60}\\b(problem|issue|bug|masalah|kendala|perform|slow|lambat|build|test|error|behavio)",
+    "\\b(what|which)\\b.{0,20}\\b(caus|reason|penyebab)",
+    "\\b(should (we|i)|better to|lebih baik|sebaiknya)\\b.{0,40}\\b(or|atau|vs|versus)\\b",
+    "\\b(p95|p99|latency|ttfb|lcp|inp|cls|n\\+1|deadlock|timeout|out of memory|oom)\\b"
+  ],
+  "files": [],
+  "negative": [
+    "\\b(analisis|analisa|analy[sz]e)\\s+error\\b",
+    "\\b(build|create|make|bikin|buat)\\b.{0,20}\\b(new|baru)\\b.{0,20}\\b(project|app|website|aplikasi)\\b"
+  ],
+  "slash": ["/analyze", "/analyse", "/investigate", "/rca", "/why"],
+  "priority": 2
+}

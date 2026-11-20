@@ -1,0 +1,8 @@
+{
+  "keywords": ["changelog", "checkpoint", "update the docs", "update docs", "documentation drift", "docs are outdated", "docs out of date", "known issues", "technical decisions", "write down the decision", "catat di changelog", "perbarui dokumentasi", "update dokumentasi", "dokumen usang", "catat keputusan", "dokumentasi bertentangan", "actualizar la documentación"],
+  "patterns": ["\\b(log|record|note|write) (this|that|it|the (change|decision|fix)) (in|to|into) (the )?(changelog|docs?|checkpoint|readme|notes)", "\\b(docs?|documentation|readme)\\b.*\\b(outdated|stale|contradict|out of (date|sync)|drift)", "\\b(catat|tulis|dokumentasikan)\\b.*\\b(changelog|checkpoint|dokumen|keputusan|perubahan)", "\\b(new session|start of (the )?session)\\b.*\\b(read|context|bootstrap)"],
+  "files": ["CHANGELOG.md", "checkpoint.md", "AGENTS.md", "CLAUDE.md", "GEMINI.md"],
+  "negative": [],
+  "slash": ["/docs"],
+  "priority": 1
+}

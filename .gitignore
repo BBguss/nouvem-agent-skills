@@ -1,0 +1,5 @@
+node_modules/
+.cache/
+*.bak-*
+*.log
+.DS_Store

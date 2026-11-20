@@ -1,0 +1,14 @@
+{
+  "keywords": ["mcp tool", "mcp server", "mcp parity", "tool parity", "agent tool", "function calling tool", "coverage.json", "expose to ai agents", "add an mcp tool", "tools/list", "expose this endpoint to agents", "alat agen", "tool mcp", "paritas fitur", "fitur baru lewat mcp", "buat tool untuk agen", "outil mcp", "herramienta mcp"],
+  "patterns": [
+    "\\b(add|create|build|expose|write)\\b.*\\b(mcp|agent|function[- ]calling)\\b.*\\b(tool|endpoint|server)\\b",
+    "\\b(new|added|changed)\\b.*\\b(route|endpoint|feature)\\b.*\\b(mcp|agent tool|tool coverage)\\b",
+    "\\b(audit|check|verify)\\b.*\\b(coverage|parity)\\b.*\\b(mcp|tools?|agent)\\b",
+    "\\b(tambah|buat)\\b.*\\b(tool|alat)\\b.*\\b(mcp|agen|agent)\\b",
+    "\\b(destructive|confirm(ation)?)\\b.*\\b(mcp|agent)\\b.*\\btools?\\b"
+  ],
+  "files": ["coverage.json", "mcp.json", ".mcp.json"],
+  "negative": ["\\b(use|configure|connect to)\\b.*\\bexisting mcp server\\b"],
+  "slash": ["/tool-parity"],
+  "priority": 1
+}

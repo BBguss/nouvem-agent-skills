@@ -1,0 +1,24 @@
+{
+  "keywords": [
+    "add a feature", "add feature", "add a field", "add an endpoint", "add a page", "add a button", "add a column",
+    "add validation", "small change", "small refactor", "refactor", "rename", "extract function", "extract component",
+    "implement", "update the component", "change the behavior", "bump dependency", "upgrade dependency", "add support for",
+    "tambah fitur", "tambahkan fitur", "tambahin", "tambahkan", "ubah", "ganti", "rubah", "refaktor", "perbarui",
+    "upgrade versi", "tambah kolom", "tambah field", "tambah endpoint", "tambah halaman",
+    "añadir función", "ajouter une fonctionnalité", "funktion hinzufügen"
+  ],
+  "patterns": [
+    "\\b(add|implement|support|tambah|tambahkan|tambahin|menambahkan|añadir|ajouter)\\b.{0,40}\\b(field|column|endpoint|route|page|button|component|form|filter|option|setting|validation|feature|fitur|kolom|halaman|tombol|komponen|menu|api)\\b",
+    "\\b(refactor|refaktor|rename|extract|split|pecah|rapikan|clean ?up)\\b.{0,40}\\b(function|file|module|component|class|code|kode|fungsi|berkas)\\b",
+    "\\b(change|update|modify|ubah|ganti|rubah|perbarui)\\b.{0,40}\\b(so that|to|jadi|agar|supaya|biar)\\b",
+    "\\b(bump|upgrade|update)\\b.{0,30}\\b(dependency|dependencies|package|library|versi|version)\\b"
+  ],
+  "files": ["package.json", "pyproject.toml", "composer.json", "go.mod", "Cargo.toml", "Gemfile", "pom.xml", "build.gradle"],
+  "negative": [
+    "\\b(new project|proyek baru|project baru|from scratch|dari nol)\\b",
+    "^\\s*(why|kenapa|mengapa)\\b",
+    "\\b(deploy|release|go live)\\b"
+  ],
+  "slash": ["/change", "/feature", "/refactor"],
+  "priority": 1
+}

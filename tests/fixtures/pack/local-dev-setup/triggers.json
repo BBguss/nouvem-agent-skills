@@ -1,0 +1,21 @@
+{
+  "keywords": [
+    "run locally",
+    "di lokal",
+    "local dev",
+    "dev environment",
+    "jalankan lokal"
+  ],
+  "patterns": [
+    "\\b(setup|set up|install|jalankan|run)\\b.{0,30}\\b(lokal|local|locally)\\b"
+  ],
+  "files": [
+    "package.json",
+    "docker-compose.yml"
+  ],
+  "negative": [
+    "\\b(production|prod|produksi)\\b"
+  ],
+  "slash": [],
+  "priority": 1
+}

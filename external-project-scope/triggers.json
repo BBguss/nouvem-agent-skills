@@ -1,0 +1,8 @@
+{
+  "keywords": ["out of scope", "out-of-scope", "outside this project", "outside the project", "another repo", "other repo", "sibling project", "external repo", "different project", "project lain", "proyek lain", "repo lain", "folder di luar", "di luar proyek", "di luar project", "otro proyecto", "outofscope"],
+  "patterns": ["\\b(work|look|go|switch) (on|at|into|to) (the |another |a |that )?(other|another|different|sibling|external) (project|repo|repository|app|codebase)", "\\b(di luar|diluar|luar) (project|proyek|folder|repo|cakupan|scope)", "\\b(project|proyek|repo|aplikasi) (lain|yang lain|sebelah)\\b", "\\b(not part of|unrelated to) (this|the current) (project|repo)"],
+  "files": [],
+  "negative": [],
+  "slash": ["/outofscope", "/ofs"],
+  "priority": 2
+}

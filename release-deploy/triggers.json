@@ -1,0 +1,14 @@
+{
+  "keywords": ["deploy", "deploy to production", "release to production", "push to production", "push to prod", "go live", "ship to prod", "cut a release", "release notes and deploy", "roll back the release", "rollback deploy", "rilis", "rilis ke produksi", "naikkan ke produksi", "deploy ke produksi", "publikasikan ke live", "mise en production", "desplegar a produccion", "veroeffentlichen auf produktion"],
+  "patterns": [
+    "\\b(push|ship|deploy|release|publish)\\b.*\\b(prod|production|live)\\b",
+    "\\b(go|going) live\\b",
+    "\\b(rilis|deploy|naikkan|publish)\\b.*\\b(prod|produksi|live)\\b",
+    "\\b(rollback|roll back|revert)\\b.*\\b(release|deploy|deployment)\\b",
+    "\\b(new|latest) (version|release)\\b.*\\b(to|on)\\b.*\\b(server|prod|production|vps)\\b"
+  ],
+  "files": ["Dockerfile", "docker-compose.yml", "vercel.json", "netlify.toml", "fly.toml", "render.yaml", "Procfile", "ecosystem.config.js", "ecosystem.config.cjs", "serverless.yml"],
+  "negative": ["\\b(deploy|release)\\b.*\\b(staging|preview)\\s+only\\b", "\\bhotfix\\b"],
+  "slash": ["/deploy", "/release"],
+  "priority": 3
+}

@@ -1,0 +1,15 @@
+{
+  "keywords": [
+    "analisis error",
+    "analyse error",
+    "stack trace",
+    "traceback"
+  ],
+  "patterns": [
+    "\\b(kenapa|mengapa|why)\\b.*\\b(error|gagal|failed|fails|crash)"
+  ],
+  "files": [],
+  "negative": [],
+  "slash": [],
+  "priority": 1
+}
