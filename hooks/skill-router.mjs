@@ -3,6 +3,8 @@
 //
 // Hook mode (default): reads a hook payload (JSON or plain text) on stdin, prints a
 // hookSpecificOutput JSON with additionalContext on stdout, or nothing when no skill fits.
+// Antigravity CLI (PreInvocation event): prints {"injectSteps":[{systemMessage}]} once per user
+// turn (the hook fires before every model call; later calls of the same turn get {}).
 // It never blocks a prompt: every error ends in exit 0 with no output.
 //
 // CLI:
@@ -73,6 +75,7 @@ function cacheFile(pack) {
   const h = crypto.createHash('sha1').update(pack).digest('hex').slice(0, 12);
   const dirs = [];
   if (process.env.SKILL_ROUTER_CACHE_DIR) dirs.push(process.env.SKILL_ROUTER_CACHE_DIR);
+  if (process.platform === 'win32' && process.env.LOCALAPPDATA) dirs.push(path.join(process.env.LOCALAPPDATA, 'skill-pack', 'cache'));
   dirs.push(path.join(process.env.XDG_CACHE_HOME || path.join(os.homedir(), '.cache'), 'skill-pack'));
   dirs.push(path.join(pack, '.cache'));
   for (const d of dirs) {
@@ -236,7 +239,7 @@ export function extractPrompt(payload) {
     if (v && typeof v === 'object') return pick(v.content ?? v.text ?? v.prompt ?? '');
     return '';
   };
-  for (const k of ['prompt', 'user_prompt', 'userPrompt', 'input', 'message', 'text', 'query', 'request']) {
+  for (const k of ['prompt', 'lastUserInput', 'user_prompt', 'userPrompt', 'input', 'message', 'text', 'query', 'request']) {
     const s = pick(payload[k]);
     if (s && s.trim()) return s;
   }
@@ -304,6 +307,24 @@ export function renderTable(skills) {
 
 // ---------- entry ----------
 
+// Antigravity fires PreInvocation before every model call of a turn. Remember the turn
+// (conversation + step count at turn start + prompt) so the note is injected only once.
+export function seenTurn(obj, prompt) {
+  try {
+    const key = crypto.createHash('sha1')
+      .update(String(obj.conversationId || '') + '|' + String(obj.initialNumSteps ?? '') + '|' + prompt).digest('hex').slice(0, 16);
+    const idx = cacheFile(packDir());
+    if (!idx) return false;
+    const file = path.join(path.dirname(idx), 'agy-turns.json');
+    let list = [];
+    try { list = JSON.parse(fs.readFileSync(file, 'utf8')); if (!Array.isArray(list)) list = []; } catch { /* first run */ }
+    if (list.includes(key)) return true;
+    list.push(key);
+    fs.writeFileSync(file, JSON.stringify(list.slice(-200)));
+    return false;
+  } catch { return false; }
+}
+
 function readStdin() {
   try { return fs.readFileSync(0, 'utf8'); } catch { return ''; }
 }
@@ -335,15 +356,22 @@ function main() {
   if (!prompt.trim()) return;
   // Harness-generated turns (background task notices, system reminders) are not user requests.
   if (/^\s*<(task-notification|system-reminder|local-command-stdout|command-name|bash-stdout)\b/i.test(prompt)) return;
-  const cwd = (payload && typeof payload === 'object' && (payload.cwd || payload.workspace || payload.directory)) || process.cwd();
+  const obj = payload && typeof payload === 'object' ? payload : {};
+  const event = obj.hook_event_name || obj.hookEventName || 'UserPromptSubmit';
+  const agy = event === 'PreInvocation';
+  // Antigravity runs the hook with cwd = the hooks.json folder; the workspace comes in workspacePaths.
+  const ws = Array.isArray(obj.workspacePaths) && obj.workspacePaths.find((p) => typeof p === 'string' && p);
+  const cwd = ws || obj.cwd || obj.workspace || obj.directory || process.cwd();
+  const empty = () => { if (agy) process.stdout.write('{}\n'); };
+  if (agy && seenTurn(obj, prompt)) return empty();
   const r = route(prompt, cwd);
   if (process.env.SKILL_ROUTER_DEBUG === '1') {
     for (const x of r.scores.filter((x) => x.score > 0)) process.stderr.write(`[skill-router] ${x.score.toFixed(1)} ${x.skill.name} ${x.why.join(', ')}\n`);
   }
-  if (!r.picked.length) return;
+  if (!r.picked.length) return empty();
   const text = renderContext(r.picked);
   if (process.env.SKILL_ROUTER_FORMAT === 'text') { process.stdout.write(text + '\n'); return; }
-  const event = (payload && typeof payload === 'object' && (payload.hook_event_name || payload.hookEventName)) || 'UserPromptSubmit';
+  if (agy) { process.stdout.write(JSON.stringify({ injectSteps: [{ systemMessage: { systemMessage: text } }] }) + '\n'); return; }
   process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: event, additionalContext: text } }) + '\n');
 }
 

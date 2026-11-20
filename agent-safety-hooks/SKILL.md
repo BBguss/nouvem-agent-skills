@@ -80,7 +80,7 @@ Test three classes: blocked, allowed (including the official route), and malform
 | Harness | How to install |
 |---|---|
 | Claude Code | `hooks` block in settings (`PreToolUse`/`PostToolUse` + `matcher` tool name, e.g. Bash, Write, Edit) |
-| Gemini CLI and similar | `hooks.json` or the CLI's hook settings with `matcher` and `command` |
+| Antigravity CLI (`agy`) | named hook in `~/.gemini/config/hooks.json` (or `<project>/.agents/hooks.json`): `{"<name>": {"PreToolUse": [{"type": "command", "command": "...", "timeout": 10}]}}`; also `PostToolUse`, `PreInvocation` |
 | Codex, opencode, others | use the hook/plugin feature if present; otherwise a wrapper |
 | No hooks at all | shell wrappers (alias or PATH shim for `git`, `rm`, deploy commands that check patterns then `exec` the real one), git hooks (`pre-commit`, `pre-push` rejecting force push and secrets), read-only permissions on `<PROTECTED_PATHS>`, a separate OS user without write access |
 

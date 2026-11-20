@@ -1,6 +1,6 @@
 # Nouvem agent skills
 
-A model-agnostic, harness-agnostic pack of engineering skills for coding agents (Claude Code, Codex CLI, Gemini CLI / Antigravity, opencode, and anything that reads `AGENTS.md`). Each skill is a plain Markdown playbook (`SKILL.md`) distilled from workflows that run in production: building and changing projects, analysing problems, releasing and hot-fixing safely, watching production logs, security audits, credential handling and more.
+A model-agnostic, harness-agnostic pack of engineering skills for coding agents (Claude Code, Codex CLI, Antigravity CLI, opencode, and anything that reads `AGENTS.md`). Each skill is a plain Markdown playbook (`SKILL.md`) distilled from workflows that run in production: building and changing projects, analysing problems, releasing and hot-fixing safely, watching production logs, security audits, credential handling and more.
 
 You never need a slash command. A small router reads every prompt and tells the agent which skill fits, from words, whole sentences and project context, in any language (English and Indonesian are covered by every skill; several also carry Spanish and French phrases).
 
@@ -27,7 +27,7 @@ This pack attacks both halves: playbooks that encode the process, and a router t
 | | |
 |---|---|
 | **No slash commands** | Type the request the way you would say it, in English or Indonesian (some skills also know Spanish and French). The router picks the skill; slash aliases still work if you like them. |
-| **Any harness, any model** | One pack for Claude Code, Codex CLI, Gemini CLI / Antigravity and opencode. Skills are plain Markdown, the router is a single Node file. Nothing is tied to one vendor or model. |
+| **Any harness, any model** | One pack for Claude Code, Codex CLI, Antigravity CLI and opencode. Skills are plain Markdown, the router is a single Node file. Nothing is tied to one vendor or model. |
 | **Cheap on context** | Only the names of up to 3 matching skills and why they matched are injected (about 0.8–1.4 KB per prompt), never the 137 KB of playbooks. The agent opens the one `SKILL.md` it needs. Small talk injects nothing. |
 | **Zero dependencies, fast** | No npm install, no network, no model call. Routing takes ~1.4 ms; the whole hook ~165 ms including Node start-up. |
 | **Safe to install and remove** | Idempotent installer that backs up every file it edits, validates JSON, never replaces a hook it did not create, and an uninstaller that removes exactly what it added. Errors in the router never block a prompt. |
@@ -37,20 +37,38 @@ This pack attacks both halves: playbooks that encode the process, and a router t
 
 ## Install
 
+Requirements: Node.js 18 or newer and git. No other dependencies. Works on Linux, macOS and Windows.
+
+**Linux / macOS** (also WSL, BusyBox and Git Bash on Windows):
+
 ```sh
 git clone https://github.com/BBguss/nouvem-agent-skills ~/agent-skills && sh ~/agent-skills/install.sh
 ```
 
-Requirements: POSIX `sh` (Linux, macOS, BusyBox) and Node.js 18 or newer. No other dependencies.
+**Windows, PowerShell:**
+
+```powershell
+git clone https://github.com/BBguss/nouvem-agent-skills "$HOME\agent-skills"; & "$HOME\agent-skills\install.ps1"
+```
+
+If PowerShell blocks scripts, run `node "$HOME\agent-skills\install.mjs"` instead (same options), or `powershell -ExecutionPolicy Bypass -File "$HOME\agent-skills\install.ps1"`.
+
+**Windows, Command Prompt:**
+
+```bat
+git clone https://github.com/BBguss/nouvem-agent-skills "%USERPROFILE%\agent-skills" && "%USERPROFILE%\agent-skills\install.cmd"
+```
+
+All four entry points (`install.sh`, `install.ps1`, `install.cmd`, `node install.mjs`) run the same Node installer and take the same options. On Windows the skills are linked with directory junctions, so no administrator rights or Developer Mode are needed. To update later: `git pull` in the pack folder and run the installer again.
 
 | Option | Effect |
 |---|---|
 | `--dry-run` | Print what would change, change nothing |
-| `--harness claude,codex` | Only these harnesses (`claude`, `agents`, `codex`, `gemini`, `opencode`) |
+| `--harness claude,codex` | Only these harnesses (`claude`, `agents`, `codex`, `antigravity`, `opencode`; `gemini` and `agy` also mean `antigravity`) |
 | `--no-hooks` | Link skills and write instruction blocks, but register no hook or plugin |
 | `--links-only` | Only link skills (what `link-all.sh` does) |
-| `--project DIR` | Install into one project instead of your home: `DIR/.claude/settings.json` hook and a managed block in `DIR/AGENTS.md` |
-| `--uninstall` | Same as `sh uninstall.sh` (accepts the same options) |
+| `--project DIR` | Install into one project instead of your home: `DIR/.claude/settings.json` hook, `DIR/.agents/hooks.json` (Antigravity) and a managed block in `DIR/AGENTS.md` |
+| `--uninstall` | Same as `sh uninstall.sh`; on Windows `install.ps1 --uninstall` or `install.cmd --uninstall` |
 
 The installer is idempotent: run it again after pulling updates or adding a skill. It never deletes a real folder, never replaces a hook it did not create, backs up every file it edits (`<file>.bak-<timestamp>`) and validates JSON before and after writing. `uninstall.sh` removes exactly what was installed: links pointing into the pack, hook entries that run this pack's router, the opencode plugin file and the managed blocks.
 
@@ -60,7 +78,7 @@ What it does per harness:
 |---|---|---|
 | Claude Code | `~/.claude/skills` | `UserPromptSubmit` hook in `~/.claude/settings.json` (appended next to your existing hooks) |
 | Codex CLI | `~/.codex/skills` | `UserPromptSubmit` hook in `~/.codex/hooks.json` (approve it once in Codex), plus a managed block in `~/.codex/AGENTS.md` |
-| Gemini CLI | `~/.gemini/skills` | `BeforeAgent` hook in `~/.gemini/settings.json` when Gemini CLI >= 0.20 is installed; otherwise a managed block in `~/.gemini/GEMINI.md` (also read by Antigravity) |
+| Antigravity CLI (`agy`) | `~/.gemini/config/skills` | `PreInvocation` hook named `skill-pack-router` in `~/.gemini/config/hooks.json`, next to your other named hooks. It injects the note once per user turn as a system message. With `--no-hooks`: an always-on rule in `~/.gemini/config/rules/skill-pack.md`. Leftovers of the older Gemini CLI setup (`~/.gemini/skills` links, `BeforeAgent` hook, `GEMINI.md` block) are removed |
 | opencode | `~/.config/opencode/skills` | `chat.message` plugin in `~/.config/opencode/plugins/skill-pack-router.js` when `@opencode-ai/plugin` is present, plus a managed block in `~/.config/opencode/AGENTS.md` |
 | Shared `~/.agents` | `~/.agents/skills` | used by tools that read the shared agents directory |
 
@@ -91,7 +109,7 @@ SKILL_ROUTER_DISABLE=1 ...    # turn the router off for one session
 node hooks/skill-router.mjs --table     # the table used in managed blocks
 ```
 
-The router accepts the payload shapes of Claude Code and Codex (`prompt`), Gemini CLI `BeforeAgent` (`prompt`, event name echoed back), and generic `user_prompt`, `input`, `message`, `messages[]` or plain text on stdin.
+The router accepts the payload shapes of Claude Code and Codex (`prompt`), Antigravity CLI `PreInvocation` (`lastUserInput` and `workspacePaths`, answered with `injectSteps` and deduplicated per turn), and generic `user_prompt`, `input`, `message`, `messages[]` or plain text on stdin.
 
 ## How effective is it?
 
@@ -143,7 +161,7 @@ What it does **not** solve, plainly:
 
 - **It is lexical, not semantic.** About 1 request in 8 still routes wrong or not at all. The misses are mostly vague or meta requests ("not sure what kind of task this is, handle it"), requests whose key idea is a concept rather than a word (switching a primary database "without taking sites down" should hit maintenance windows), and dependency bumps. A wrong pick costs little because the agent reads the description and can ignore it, but it is not perfect.
 - **Suggestions are not enforcement.** The router tells the agent which playbook applies; a model can still ignore it. Hard limits (never touch production paths, never reload a web server by hand) belong in hooks, see `agent-safety-hooks`.
-- **Harness support differs.** Claude Code and Gemini CLI run the hook directly; Codex CLI needs you to approve the hook once; opencode uses a plugin that has been tested offline only; harnesses without hooks get a static trigger table in their instructions file, which works only as well as the model reads it.
+- **Harness support differs.** Claude Code and Antigravity CLI run the hook directly; Codex CLI needs you to approve the hook once; opencode uses a plugin that has been tested offline only; harnesses without hooks get a static trigger table in their instructions file, which works only as well as the model reads it.
 - **Languages.** English and Indonesian are covered well; Spanish and French only for a few skills. Other languages fall back to the English terms in your prompt.
 - **The playbooks need your values.** Commands, approval words and paths are placeholders the project fills in once; until then the agent asks.
 
@@ -233,7 +251,7 @@ What it does **not** solve, plainly:
 | `priority` | Tie-break; `0` marks a fallback skill used only when nothing specific matches or as the multi-skill coordinator. |
 
 4. Check it: `node hooks/skill-router.mjs --explain "<a few real prompts>"`, then `node --test tests/*.test.mjs`.
-5. Regenerate the index: `node scripts/gen-index.mjs`, and rerun `sh install.sh` to link the new skill.
+5. Regenerate the index: `node scripts/gen-index.mjs`, and rerun the installer to link the new skill.
 
 ## Adapting skills to a project
 
