@@ -506,5 +506,65 @@
  {
   "p": "thanks bro, mantap banget",
   "ok": []
+ },
+ {
+  "p": "We are adding multi-tenant support and need to add tenant_id to every table of the SaaS database and fill it for the rows that already exist",
+  "ok": [
+   "data-migration"
+  ]
+ },
+ {
+  "p": "versi lama aplikasi catatan desktop saya menyimpan data di IndexedDB dengan struktur lama, saat update data user jangan sampai hilang",
+  "ok": [
+   "data-migration"
+  ]
+ },
+ {
+  "p": "I told you never to publish anything without my word, so when my portfolio build is ready, wait for me",
+  "ok": [
+   "hitl-approvals"
+  ]
+ },
+ {
+  "p": "kapan agent boleh jalan sendiri dan kapan harus berhenti nunggu persetujuan saya untuk aplikasi SaaS ini",
+  "ok": [
+   "hitl-approvals"
+  ]
+ },
+ {
+  "p": "The checkout of our web shop throws errors and the customer sees a blank page, the exceptions are caught and ignored. Make failures visible and understandable.",
+  "ok": [
+   "honest-errors"
+  ]
+ },
+ {
+  "p": "error di CLI tool kami cuma mencetak undefined, tolong buat setiap kegagalan punya kode dan penjelasan yang bisa dipahami orang awam",
+  "ok": [
+   "honest-errors"
+  ]
+ },
+ {
+  "p": "Run my SaaS dashboard in a real browser at phone, tablet and laptop sizes and show me screenshots with real data, not mock numbers",
+  "ok": [
+   "real-ui-verify"
+  ]
+ },
+ {
+  "p": "coba buka halaman portofolio saya di layar kecil dan beneran lihat apakah menu dan gambarnya rapi, jangan cuma baca kodenya",
+  "ok": [
+   "real-ui-verify"
+  ]
+ },
+ {
+  "p": "how do I notarize and staple my macOS build, then push it through a staged update channel so only 10 percent get it first",
+  "ok": [
+   "desktop-release"
+  ]
+ },
+ {
+  "p": "tolong siapkan pipeline untuk membuat installer exe dan dmg dari app Flutter desktop kami lengkap dengan tanda tangan digital",
+  "ok": [
+   "desktop-release"
+  ]
  }
 ]

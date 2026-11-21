@@ -81,5 +81,22 @@ Report as a list and do not fix in the same turn; fixes follow the switch in sec
 ## 6. Keep docs short
 Link, do not copy: one source of truth per fact. A file over about 300 lines: split or archive. Write decisions and their reasons, not session narrative.
 
+## 7. Doc trail: plan, checkpoint, runbook
+Every skill in this pack leaves the same three files, so the user always knows where to look and the next session can resume without asking.
+
+| Moment | File (default name) | What goes in | Template |
+|---|---|---|---|
+| A plan is approved | `plan.md` | goal, checkbox steps with their checks, approvals needed, tests, rollback | [`templates/plan.md`](templates/plan.md) |
+| Work is finished (or stopped PARTIAL) | `checkpoint.md` | numbered entry, newest on top | [`templates/checkpoint.md`](templates/checkpoint.md) |
+| An error is understood | `docs/error-runbook.md` | exact error text, side, root cause, fix, status | [`templates/error-runbook.md`](templates/error-runbook.md) |
+
+- The project's own names win: if it already has `CHANGELOG.md`, `docs/decisions/`, an issue tracker or a runbook elsewhere, use those and do not create duplicates.
+- A missing file is created from the template the first time it is needed, and the report says so in one line.
+- These three files are written in `auto` mode unless the project set `offer-first` for them; other docs keep the switch in section 1.
+- Order inside one job: `plan.md` (before work) → work → `docs/error-runbook.md` (each error the moment it is understood) → `checkpoint.md` (last, referencing plan and runbook entries) → clear the finished plan.
+- Tick plan steps as they are done, so an interrupted job shows exactly where it stopped.
+- Small jobs (one obvious change) skip `plan.md`; they still get a checkpoint entry.
+- A skill that says "Doc trail" lists only what it adds to these files; the rules above still apply.
+
 ## Report
 One line: which doc was written or offered, the entry number, commit/push done or not. Drift findings as a numbered list with proposed fixes.

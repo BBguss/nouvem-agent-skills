@@ -1,0 +1,58 @@
+{
+  "keywords": [
+    "something went wrong",
+    "error message is vague",
+    "vague error",
+    "vague errors",
+    "generic error",
+    "error codes",
+    "error code catalog",
+    "error catalog",
+    "error handling design",
+    "user friendly error",
+    "user-friendly errors",
+    "friendly error messages",
+    "swallowed exception",
+    "swallowed errors",
+    "swallow errors",
+    "error never shown",
+    "error not shown",
+    "errors are hidden",
+    "error toast",
+    "error translations",
+    "pesan error tidak jelas",
+    "pesan error jelas",
+    "pesan error ramah",
+    "error tidak tampil",
+    "error tidak muncul",
+    "error tidak terlihat",
+    "tambahkan kode error",
+    "kode error",
+    "katalog error",
+    "mensaje de error claro"
+  ],
+  "patterns": [
+    "\\b(error|errors)\\b.{0,30}\\b(message|messages|text|wording|ux)\\b.{0,40}\\b(vague|unclear|generic|useless|unhelpful|confusing|cryptic|friendly|clear|better)\\b",
+    "\\b(vague|unclear|generic|cryptic|useless|unhelpful)\\b.{0,25}\\b(error|errors|failure)\\b.{0,15}\\b(message|messages|text|toast|dialog|page)\\b",
+    "\\b(show|display|surface|report|expose)\\b.{0,30}\\b(error|errors|failure|failures)\\b.{0,30}\\b(to|in|on)\\b.{0,15}\\b(the )?(user|ui|screen|toast|dialog|cli|agent|mcp|api response)\\b",
+    "\\b(errors?|exceptions?|failures?)\\b.{0,30}\\b(never|don'?t|doesn'?t|do not|does not|not)\\b.{0,15}\\b(reach|show|appear|display|surface|get (shown|logged)|logged)\\b",
+    "\\b(catch|try)\\b.{0,30}\\b(empty|swallow|ignore|silently)\\b.{0,30}\\b(error|exception)\\b",
+    "\\b(add|define|create|write|design)\\b.{0,20}\\b(error codes?|error catalog|error messages?|error ids?)\\b",
+    "\\b(user|app|app'?s|our|the)\\b.{0,5}\\berror\\b.{0,12}\\b(handling|reporting|messages?)\\b.{0,25}\\b(review|design|audit|improve|redesign|consistent)",
+    "\\b(pesan|teks|tampilan)\\b.{0,10}\\berror\\b.{0,30}\\b(tidak jelas|membingungkan|bahasa|ramah|kurang jelas|jelek|asal)\\b",
+    "\\berror\\b.{0,25}\\b(tidak|gak|nggak|ga|belum)\\b.{0,12}\\b(tampil|muncul|kelihatan|terlihat|dicatat|masuk log)\\b",
+    "\\b(tambah|buat|tambahkan|bikin)\\b.{0,15}\\b(kode error|katalog error|pesan error)\\b",
+    "\\b(error|kesalahan)\\b.{0,25}\\b(dalam|dua|2) bahasa\\b"
+  ],
+  "files": [],
+  "negative": [
+    "\\b(analy[sz]e|analisa|analisis)\\b.{0,3}\\berror\\b",
+    "\\bstack ?trace\\b",
+    "\\b(ECONNREFUSED|EACCES|ENOENT)\\b",
+    "\\bno errors?\\b"
+  ],
+  "slash": [
+    "/honest-errors"
+  ],
+  "priority": 1
+}

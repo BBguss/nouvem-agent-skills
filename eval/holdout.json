@@ -453,5 +453,66 @@
  {
   "p": "bedanya http sama https apa sih?",
   "ok": []
+ },
+ {
+  "p": "My personal site keeps its guestbook in a small SQLite file and I want to rename one field and backfill old entries. How do I do that without losing anything?",
+  "ok": [
+   "data-migration"
+  ]
+ },
+ {
+  "p": "kita mau ubah skema tabel pelanggan di aplikasi SaaS, kolom alamat dipecah jadi tiga, data lama harus ikut dikonversi tanpa bikin user error",
+  "ok": [
+   "data-migration"
+  ]
+ },
+ {
+  "p": "Can the agent publish the new version of my Electron app to the update server on its own, or should it stop and wait for me?",
+  "ok": [
+   "hitl-approvals",
+   "desktop-release"
+  ]
+ },
+ {
+  "p": "gimana aturan supaya agent boleh langsung merilis perbaikan kecil di web portofolio saya tapi tetap tanya kalau perubahannya besar",
+  "ok": [
+   "hitl-approvals"
+  ]
+ },
+ {
+  "p": "Users of our invoicing app only ever see a red banner that says failed. I want every failure to say what happened and what to do, in English and Indonesian.",
+  "ok": [
+   "honest-errors"
+  ]
+ },
+ {
+  "p": "di aplikasi desktop kami, kalau gagal menyimpan file tidak ada pesan apa pun dan tidak masuk log juga, bagaimana memperbaikinya dengan benar",
+  "ok": [
+   "honest-errors"
+  ]
+ },
+ {
+  "p": "I changed the layout of my portfolio gallery and the unit tests are green, but I want proof it looks right on small screens before I say it is done",
+  "ok": [
+   "real-ui-verify"
+  ]
+ },
+ {
+  "p": "apakah jendela utama aplikasi desktop saya masih tampil normal di Windows dan Linux setelah perubahan ini? coba jalankan betulan dan ambil tangkapan layar",
+  "ok": [
+   "real-ui-verify"
+  ]
+ },
+ {
+  "p": "We ship a Qt application for Windows and macOS and users get a scary warning when they run the installer. What do we need to do?",
+  "ok": [
+   "desktop-release"
+  ]
+ },
+ {
+  "p": "aplikasi kasir desktop kami mau dibagikan lewat Microsoft Store, apa saja langkah dari build sampai pembaruan berikutnya",
+  "ok": [
+   "desktop-release"
+  ]
  }
 ]

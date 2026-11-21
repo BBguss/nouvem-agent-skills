@@ -1,0 +1,57 @@
+{
+  "keywords": [
+    "standing approval",
+    "standing permission",
+    "approval gate",
+    "approval tier",
+    "human in the loop",
+    "human-in-the-loop",
+    "hitl",
+    "ask for confirmation",
+    "typed confirm",
+    "typed confirmation",
+    "always deploy small fixes",
+    "never push without asking",
+    "without asking me",
+    "without my approval",
+    "boleh langsung",
+    "tanpa izin",
+    "tanpa tanya",
+    "minta izin",
+    "izin saya dulu",
+    "persetujuan",
+    "konfirmasi dulu",
+    "selalu minta izin",
+    "jangan tanpa izin",
+    "permiso permanente",
+    "pregunta antes",
+    "perlu izin",
+    "butuh izin",
+    "izin dulu",
+    "wait for my approval",
+    "wait for my word"
+  ],
+  "patterns": [
+    "\\b(always|never)\\b.{0,30}\\b(without asking|without (my )?(approval|confirmation|permission|word|ok|go-ahead)|ask(ing)? first|ask me)\\b",
+    "\\b(you (can|may)|feel free to|go ahead and)\\b.{0,25}\\b(deploy|push|publish|send|delete|merge|release|ship)\\b.{0,30}\\b(without asking|on your own|yourself|anytime|any ?time)\\b",
+    "\\b(which|what)\\b.{0,30}\\b(actions?|steps?|things?)\\b.{0,30}\\b(need|require|needs|requires)\\b.{0,20}\\b(approval|confirmation|permission|my ok)\\b",
+    "\\b(when|should|do)\\b.{0,30}\\b(agent|you|claude)\\b.{0,30}\\b(ask|wait for)\\b.{0,20}\\b(approval|confirmation|permission|my (ok|approval|word|go-ahead))\\b",
+    "\\b(i'?m|i am|user is)\\b.{0,12}\\b(away|offline|asleep|afk)\\b.{0,60}\\b(approval|confirm|ask|gate|deploy|publish)\\b",
+    "\\b(selalu|jangan pernah|jangan)\\b.{0,30}\\b(minta izin|tanya dulu|tanpa izin|tanpa tanya|konfirmasi)\\b",
+    "\\b(boleh|silakan|silahkan)\\b.{0,15}\\b(langsung|sendiri)\\b.{0,25}\\b(deploy|push|publish|kirim|hapus|rilis|merge)\\b",
+    "\\b(deploy|rilis|publish|push|hapus|kirim|merge)\\b.{0,35}\\b(boleh langsung|tanpa (tanya|izin|konfirmasi)|perlu (izin|persetujuan|konfirmasi))\\b",
+    "\\b(aksi|langkah|tindakan)\\b.{0,25}\\b(mana|apa)\\b.{0,60}\\b(perlu|butuh|harus)\\b.{0,15}\\b(izin|persetujuan|konfirmasi)\\b",
+    "\\b(kapan|bilamana)\\b.{0,30}\\b(agent|agen|ai)\\b.{0,40}\\b(boleh|harus)\\b.{0,40}\\b(izin|persetujuan|nunggu|menunggu|berhenti|tanya)\\b"
+  ],
+  "files": [],
+  "negative": [
+    "\\bapproval (rate|workflow tool)\\b",
+    "\\bapprove (this|the) (pr|pull request)\\b",
+    "\\b(just|while|sedang)\\s+(investigating|analy[sz]ing|menganalisis|menyelidiki)\\b",
+    "\\bgo ahead and fix\\b"
+  ],
+  "slash": [
+    "/approvals"
+  ],
+  "priority": 1
+}

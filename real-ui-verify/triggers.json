@@ -1,0 +1,68 @@
+{
+  "keywords": [
+    "test it in the browser",
+    "test in the browser",
+    "check in the browser",
+    "check on mobile",
+    "check on my phone",
+    "is it responsive",
+    "is this responsive",
+    "e2e test",
+    "e2e tests",
+    "end to end test",
+    "playwright",
+    "webdriver",
+    "selenium",
+    "cypress",
+    "screenshot the page",
+    "take screenshots",
+    "visual check",
+    "viewport matrix",
+    "real e2e",
+    "does the app still open",
+    "does the desktop app still open",
+    "cek di hp",
+    "cek tampilan",
+    "uji tampilan",
+    "tes beneran",
+    "tes tampilan",
+    "uji coba di browser",
+    "tes di browser",
+    "cek responsif",
+    "screenshot halaman",
+    "prueba en el navegador",
+    "tangkapan layar",
+    "jalankan betulan",
+    "jalankan beneran",
+    "tampil normal"
+  ],
+  "patterns": [
+    "\\b(test|check|verify|try|open|look at|see)\\b.{0,25}\\b(it|this|the (page|app|ui|screen|site|layout|change|form))\\b.{0,25}\\b(in|on|with)\\b.{0,12}\\b(a |the |real )?(browser|mobile|phone|tablet|iphone|android|small screen|narrow)\\b",
+    "\\b(tests? (pass|passed|passing|are green)|green tests?)\\b.{0,60}\\b(but|yet|still)\\b.{0,50}\\b(ui|screen|page|layout|looks?|broken|blank|browser|app)\\b",
+    "\\b(ui|layout|page|screen|app|window)\\b.{0,30}\\b(looks?|is|was)\\b.{0,12}\\b(broken|off|wrong|blank|empty|cut off|overflow\\w*)\\b.{0,30}\\b(on|at|in)\\b.{0,15}\\b(mobile|phone|small|narrow|\\d{3} ?px|safari|firefox|windows|macos|linux)\\b",
+    "\\b(responsive|viewports?|breakpoints?)\\b.{0,30}\\b(check|test|verify|matrix|screenshots?|360|390|768|1024|1440)\\b",
+    "\\b(360|390|768|1024|1440)\\b.{0,20}\\b(360|390|768|1024|1440)\\b",
+    "\\b(write|add|run|set up|create)\\b.{0,15}\\b(an? )?(e2e|end[- ]to[- ]end|browser|ui|playwright|visual)\\b.{0,12}\\b(tests?|specs?|suite|checks?)\\b",
+    "\\b(prove|verify|confirm|make sure)\\b.{0,30}\\b(ui|screen|page|window|dialog|layout)\\b.{0,30}\\b(works?|renders?|looks?|opens?|shows?)\\b",
+    "\\b(real|actual|live)\\b.{0,6}\\b(data|screens?|browser|app)\\b.{0,30}\\b(not|instead of|rather than)\\b.{0,12}\\b(mock|mocks|mocked|fake|stub|dummy)\\w*\\b",
+    "\\b(cek|uji|tes|test|coba|lihat)\\b.{0,25}\\b(tampilan|layout|halaman|ui|aplikasi|app)\\b.{0,25}\\b(di|pada)\\b.{0,10}\\b(hp|ponsel|mobile|browser|layar kecil|tablet|windows|macos)\\b",
+    "\\b(tampilan|layout|halaman|ui)\\b.{0,25}\\b(berantakan|rusak|pecah|kepotong|terpotong|overflow|kosong)\\b.{0,25}\\b(di|pada)\\b.{0,10}\\b(hp|ponsel|mobile|layar kecil|tablet)\\b",
+    "\\b(tes|test|uji)\\b.{0,12}\\b(sudah )?(lulus|pass|hijau)\\b.{0,50}\\b(tapi|namun|tetapi)\\b.{0,40}\\b(tampilan|layar|ui|halaman|aplikasi)\\b",
+    "\\b(aplikasi|app)\\b.{0,15}\\b(desktop)\\b.{0,30}\\b(masih )?(bisa )?(dibuka|jalan|terbuka|launch|opens?)\\b",
+    "\\b(jalankan|coba jalankan|buka|run|launch)\\b.{0,12}\\b(betulan|beneran|sungguhan|for real|really)\\b"
+  ],
+  "files": [
+    "playwright.config.ts",
+    "playwright.config.js",
+    "cypress.config.ts",
+    "wdio.conf.js"
+  ],
+  "negative": [
+    "\\b(lighthouse|core web vitals|seo|llms\\.txt|sitemap)\\b",
+    "\\bunit tests? only\\b"
+  ],
+  "slash": [
+    "/ui-verify"
+  ],
+  "priority": 1
+}

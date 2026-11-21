@@ -15,7 +15,7 @@ A catalog of errors that grows with every incident. Works for any project: a pro
 ## Project adaptation
 | Placeholder | Meaning | Example |
 |---|---|---|
-| `<RUNBOOK_FILE>` | the project's error catalog (parts A and B, see Structure) | `docs/error-runbook.md`; create a short one if the project has none and the user agrees |
+| `<RUNBOOK_FILE>` | the project's error catalog (parts A and B, see Structure) | `docs/error-runbook.md`; create it from `living-docs/templates/error-runbook.md` if the project has none (doc trail, `living-docs` section 7) |
 | `<CHANGELOG_FILE>` | record of work | `CHANGELOG.md` |
 | `<LOG_SOURCES>` | where logs live per layer | app log, build/deploy log, platform dashboard logs, browser console, local terminal |
 | `<CLASSIFY_CMD>` | (optional) command returning a catalog code for raw error text | small script, or empty |

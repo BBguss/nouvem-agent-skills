@@ -1,0 +1,71 @@
+{
+  "keywords": [
+    "desktop app release",
+    "release the desktop app",
+    "release the app",
+    "build installer",
+    "build an installer",
+    "make an installer",
+    "windows installer",
+    "code signing",
+    "code sign",
+    "sign the app",
+    "sign the build",
+    "notarize",
+    "notarization",
+    "auto update",
+    "auto-update",
+    "autoupdate",
+    "update channel",
+    "electron builder",
+    "electron-builder",
+    "tauri",
+    "pyinstaller",
+    "msix",
+    "dmg",
+    "appimage",
+    "microsoft store",
+    "mac app store",
+    "snap store",
+    "winget",
+    "squirrel",
+    "rilis aplikasi desktop",
+    "bikin installer",
+    "buat installer",
+    "buat installer exe",
+    "tanda tangan aplikasi",
+    "update otomatis aplikasi",
+    "rollback update",
+    "crear instalador"
+  ],
+  "patterns": [
+    "\\b(build|make|create|package|bundle|ship|publish|release|sign)\\b.{0,30}\\b(installer|\\.exe|\\.msi|\\.dmg|\\.pkg|appimage|\\.deb|\\.rpm|msix)\\b",
+    "\\b(electron|tauri|flutter desktop|wpf|\\.net desktop|qt|pyinstaller|appkit|winforms)\\b.{0,50}\\b(release|ship|publish|package|installer|sign|update|distribute|build)\\b",
+    "\\b(release|ship|publish|distribute|package)\\b.{0,30}\\b(desktop|windows|mac|macos|linux)\\b.{0,15}\\b(app|application|build|version)\\b",
+    "\\b(auto|automatic|in-app)\\b.{0,5}\\b(update|updater|updates)\\b.{0,40}\\b(app|desktop|channel|users|installed|broke|broken|fail\\w*|rollback|roll back)\\b",
+    "\\b(bad|broken|faulty)\\b.{0,12}\\b(update|build|release)\\b.{0,40}\\b(users|installed|rolled out|roll back|rollback|pull)\\b",
+    "\\b(smartscreen|gatekeeper|notariz\\w+|signing certificate|certificate)\\b.{0,40}\\b(app|exe|windows|mac|build|installer|warning|blocked)\\b",
+    "\\b(rilis|rilis(kan)?|bikin|buat|build|kemas|publish|distribusi\\w*)\\b.{0,30}\\b(installer|aplikasi desktop|app desktop|versi desktop|\\.exe|\\.msi|\\.dmg)\\b",
+    "\\b(aplikasi|app)\\b.{0,12}\\b(desktop)\\b.{0,40}\\b(rilis|rilisnya|release|update|installer|tanda tangan|signing|dibagikan|didistribusi\\w*)\\b",
+    "\\b(update|pembaruan)\\b.{0,20}\\b(otomatis)\\b.{0,30}\\b(aplikasi|app|desktop|pengguna)\\b"
+  ],
+  "files": [
+    "electron-builder.yml",
+    "electron-builder.json",
+    "forge.config.js",
+    "tauri.conf.json",
+    "pubspec.yaml",
+    "app.manifest",
+    "Package.appxmanifest"
+  ],
+  "negative": [
+    "\\b(do not|don't|jangan) (release|rilis)\\b",
+    "\\b(web|website|vps|server|saas)\\b.{0,15}\\bdeploy\\b",
+    "\\bmobile app\\b",
+    "\\b(app store|play store)\\b.{0,20}\\b(ios|android|iphone)\\b"
+  ],
+  "slash": [
+    "/desktop-release"
+  ],
+  "priority": 3
+}

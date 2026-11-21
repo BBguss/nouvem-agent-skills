@@ -26,13 +26,13 @@ Origin: sessions where requests arrive in natural language, mix intents, and cha
 |---|---|---|
 | **shape** | vague idea, "brainstorm", "which approach", "enaknya gimana", options wanted | `idea-shaping` → (approved brief) → `build-project` / `plan-then-code` / `code-change` |
 | **build** | new project, "bikin website/app" (vague idea: start with `idea-shaping`) | `build-project` → `local-dev-setup` → `definition-of-done` → (`web-quality-audit` if public web) → `release-deploy` |
-| **change** | add/modify feature, refactor in existing repo | small: `code-change` → `definition-of-done`; large/risky: `plan-then-code` → `definition-of-done` |
+| **change** | add/modify feature, refactor in existing repo | small: `code-change` → `definition-of-done`; large/risky: `plan-then-code` → `definition-of-done`; UI change: + `real-ui-verify` before done; schema or stored-data change: + `data-migration`; user-visible errors: + `honest-errors` |
 | **fix** | error message, stack trace, broken behavior | known signature: `error-runbook`; unknown cause: `analyze-problem` → `code-change`/`plan-then-code` → `definition-of-done`; prod impact: + `safe-hotfix` or `release-deploy` |
 | **analyze** | why, investigate, compare options, root cause | `analyze-problem` (read-only), then ask before any fix chain |
-| **ship** | deploy, release, go live, hotfix | small tested backend fix: `safe-hotfix`; otherwise `release-deploy`; downtime risk: + `maintenance-window-ops` |
+| **ship** | deploy, release, go live, hotfix | small tested backend fix: `safe-hotfix`; otherwise `release-deploy`; desktop app installer/update: `desktop-release`; downtime risk: + `maintenance-window-ops`; standing or typed approvals: `hitl-approvals` |
 | **operate** | watch logs, alerts, restarts, reboots | `prod-log-watch`; disruptive actions: `maintenance-window-ops`; heavy jobs: `remote-offload` |
 | **audit** | security review, pentest, quality/SEO/perf | security: `security-audit-cycle`; web quality: `web-quality-audit`; agent tools: `agent-tool-parity` |
-| **migrate** | move site/app to new host/platform | `zero-downtime-migration` (+ `maintenance-window-ops` for cutover) |
+| **migrate** | move site/app to new host/platform | `zero-downtime-migration` (+ `maintenance-window-ops` for cutover); schema/data/save-format changes: `data-migration` |
 | **setup / local** | run locally, env broken, onboarding | `local-dev-setup` (→ `analyze-problem` if stuck) |
 | **document** | write up, changelog, decision, runbook | `living-docs` |
 | **secrets** | needs password/token/key | `credential-broker` inside whatever chain is running |

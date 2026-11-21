@@ -89,5 +89,20 @@
  {"p":"should we use websockets or polling for the live order status?","ok":["idea-shaping","analyze-problem"]},
  {"p":"bagusnya pakai apa untuk simpan file upload user, S3 atau disk lokal?","ok":["idea-shaping"]},
  {"p":"what is the best way to structure multi-tenant billing, give me pros and cons","ok":["idea-shaping"]},
- {"p":"saya punya ide aplikasi antrian klinik, bantu rancang konsepnya dulu","ok":["idea-shaping","build-project"]}
+ {"p":"saya punya ide aplikasi antrian klinik, bantu rancang konsepnya dulu","ok":["idea-shaping","build-project"]},
+ {"p":"from now on you can deploy small tested fixes to my portfolio site without asking me, but ask first for anything big","ok":["hitl-approvals"]},
+ {"p":"tolong aturkan aksi mana saja di aplikasi desktop saya yang perlu izin dulu sebelum agent jalan, misalnya publish update atau hapus data","ok":["hitl-approvals"]},
+ {"p":"I'm going to be away tonight, what should the agent do when it hits a gated step in our SaaS release? Hold and report or ask me?","ok":["hitl-approvals"]},
+ {"p":"our portfolio contact form just says something went wrong, make the error message clear and add error codes","ok":["honest-errors"]},
+ {"p":"pesan error di aplikasi desktop kami tidak jelas dan error tidak tampil di layar, tolong rapikan","ok":["honest-errors"]},
+ {"p":"the SaaS API returns Error 500 with no explanation and the MCP tools swallow exceptions, design proper error handling","ok":["honest-errors"]},
+ {"p":"tests pass but I haven't seen my portfolio page on a phone, check it in the browser at mobile widths and take screenshots","ok":["real-ui-verify"]},
+ {"p":"does the desktop app still open after the refactor? run it for real and screenshot the main window","ok":["real-ui-verify"]},
+ {"p":"tolong tes beneran dashboard SaaS ini pakai Playwright di 360 sampai 1440 px, jangan pakai data mock","ok":["real-ui-verify"]},
+ {"p":"build a signed Windows installer for my Electron app and set up auto update","ok":["desktop-release"]},
+ {"p":"rilis aplikasi desktop versi 2.1 ke Mac dan Windows, perlu notarize dan code signing","ok":["desktop-release"]},
+ {"p":"a bad update just went out to users of our Tauri app, how do I roll it back and stage the next one?","ok":["desktop-release"]},
+ {"p":"add a column to the posts table for my portfolio blog and write the migration","ok":["data-migration"]},
+ {"p":"versi baru aplikasi desktop mengubah format save file, file lama harus tetap bisa dibuka, bikin migrasinya","ok":["data-migration"]},
+ {"p":"after the deploy I get column not found in production, the schema differs between dev and prod for our SaaS","ok":["data-migration"]}
 ]

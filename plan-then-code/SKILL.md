@@ -15,7 +15,7 @@ Works for any project type (web app, API, CMS, mobile backend, CLI, portfolio si
 ## Project adaptation
 | Placeholder | Meaning | Example |
 |---|---|---|
-| `<PLAN_FILE>` | persistent plan | `plan.md` in the project root |
+| `<PLAN_FILE>` | persistent plan | `plan.md` in the project root, started from `living-docs/templates/plan.md` (doc trail) |
 | `<MEMORY_STORE>` | fallback when no plan file exists | the harness's project memory |
 | `<LAYER_ORDER>` | layers from inner to outer | utils, service, controller, route, UI; or lib, command, CLI; or data, API, screen |
 | `<TEST_CMD>` / `<TYPECHECK_CMD>` | per-layer verification | see `definition-of-done` |
